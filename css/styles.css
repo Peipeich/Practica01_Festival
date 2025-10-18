@@ -1,0 +1,19 @@
+:root{
+    --black:rgba(3, 8, 18, 1)
+    --blue:rgba(21, 80, 167, 1)
+    --orange:rgba(255, 158, 39, 1)
+    --red:rgba(244, 32, 74, 1)
+    --white:rgba(241, 241, 249, 1)
+    --small:1rem
+    --mid:2rem
+    --large:3rem
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* font-size: 20px; */
+
+}
