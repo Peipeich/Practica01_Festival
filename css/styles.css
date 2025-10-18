@@ -39,6 +39,10 @@
 
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body{
     background-color: var(--black);
 }
@@ -46,7 +50,11 @@ body{
 
 /* MENÚ */
 nav{
-    margin: var(--small);
+    position: fixed;
+    width: 100%;
+    padding: var(--small);
+    z-index: 9999;
+    background-color: var(--black);
     
 }
 
@@ -118,4 +126,22 @@ nav> .nav-bot> ul> .button-ticket> a:hover{
     background-color: var(--white);
     color: var(--black);
 
+}
+
+main{
+
+}
+
+main> video{
+    width: 100%;
+    height: auto;
+object-fit: cover;
+}
+
+section{
+
+}
+
+section h2{
+    color: var(--white);
 }
