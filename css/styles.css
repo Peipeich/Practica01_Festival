@@ -162,9 +162,11 @@ main> .parallax-text{
    padding-top: var(--small);
 }
 
-section > .fest-intro,.artist-lineup,.news,.experience{
-  margin-top: 100vh; 
-  z-index: 10;
+.fest-intro{
+    margin-top: 100vh; 
+}
+
+.fest-intro,.artist-lineup,.news,.experience{
   background-color: var(--black);
   padding: 5rem 10%;
   color: var(--white);
@@ -175,7 +177,12 @@ section h2{
     color: var(--white);
 }
 
-section> .fest-intro{
-    
+/* ENTRADAS */
+section > .tarjetas-pago{
+  margin-top: 100vh; 
+  z-index: 10;
+  background-color: var(--black);
+  padding: 5rem 10%;
+  color: var(--white);
 
 }
