@@ -178,11 +178,38 @@ section h2{
 }
 
 /* ENTRADAS */
-section > .tarjetas-pago{
-  margin-top: 100vh; 
-  z-index: 10;
+.tarjetas-pago{
   background-color: var(--black);
   padding: 5rem 10%;
   color: var(--white);
+  display: flex;
 
 }
+
+.marquesina{
+  width: 100%; 
+  overflow: hidden;
+  box-sizing: border-box; 
+  white-space: nowrap;
+  padding-left: 100%;
+}
+
+.marquesina>p{
+    display: inline-block;
+    animation: mover-marquesina 10s linear infinite ;
+    color: var(--orange);
+    font-family: var(--sectypo);
+    font-size: var(--mid);
+}
+
+@keyframes mover-marquesina {
+  0% {
+    transform: translateX(0%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+  
+}
+
+
