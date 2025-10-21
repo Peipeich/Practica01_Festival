@@ -51,6 +51,7 @@ body{
 img{
     width: 100%;
     height: auto;
+    vertical-align: middle;
     object-fit: cover;
 }
 
@@ -183,21 +184,43 @@ section h2{
 }
 
 /* ARTIST LINE-UP */
-.artist-lineup1{
+.artist-section {
     display: flex;
+    flex-direction: column;
     width: 100%;
+    color: var(--white);
+    padding: 4rem;
+}
+
+.day-artists{
+    padding-bottom: 2rem;
     
 }
-.artist-pics  img{
+
+.artist-section > .artist-card .artist-pics
+
+.artist-section > .artist-card .artist-pics img{
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.artist-bot{
+.artist-section .artist-bot{
     display: grid;
-    grid-template-columns: 2 2 2;
+    grid-template-columns: auto auto auto;
+    padding-top: 2rem;
+    gap: 2rem;
+    width: 100%;
 }
+
+.artist-section .artist-bot img{
+    height: 300px;
+}
+
+ 
+
+
+
 
 
 /* ENTRADAS */
