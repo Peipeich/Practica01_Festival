@@ -48,6 +48,11 @@ body{
     
 }
 
+img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 /* MENÚ */
 nav{
@@ -176,6 +181,24 @@ main> .parallax-text{
 section h2{
     color: var(--white);
 }
+
+/* ARTIST LINE-UP */
+.artist-lineup1{
+    display: flex;
+    width: 100%;
+    
+}
+.artist-pics  img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.artist-bot{
+    display: grid;
+    grid-template-columns: 2 2 2;
+}
+
 
 /* ENTRADAS */
 .tarjetas-pago{
