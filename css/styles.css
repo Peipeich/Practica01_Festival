@@ -218,8 +218,27 @@ section h2{
 }
 
  
+.agenda{
+    color: var(--white);
+    
+}
 
+.agenda .agenda-line{
+    display: flex;
+    width: 100%;
 
+}
+
+.agenda .agenda-line p{
+    background-color: var(--blue);
+    padding: 3rem;
+}
+
+.agenda .agenda-line img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
 
 
 
