@@ -119,6 +119,75 @@ nav> .nav-bot> ul> li a{
 nav> .nav-bot> ul> li a:hover{
     color: var(--orange);
 }
+/* MENÚ DESPLEGABLE CON HOVER */
+.nav-bot {
+    text-align: center;   
+}
+
+.nav-bot ul {
+    list-style-type: none;
+}
+
+.nav-bot ul li {
+    width: 162px;
+}
+
+.nav-bot ul li a {
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 8px;
+    position: relative;
+}
+
+.nav-bot ul li ul li a {
+    width: 160px;
+    padding: 8px 0px;
+    border-top-color: transparent;
+}
+
+.nav-bot ul li ul {
+    display: none;
+}
+
+
+.nav-bot ul li.desple-top { 
+    float: left;
+    margin-right: 1px;
+}
+
+.nav-bot ul li a.desple-top, .nav-bot ul li a.desple-bot {
+    display: block;
+    position: relative;
+}
+
+.nav-bot ul li:hover {
+    position: relative;
+}
+
+.nav-bot ul li a:hover, .nav-bot ul li:hover a.desple-top {
+    position: relative;
+}
+
+.nav-bot ul li:hover  ul.desple-bot, .nav-bot ul li a:hover  ul.desple-bot{
+    display: block;
+    position: absolute;left: 0px;
+}
+
+
+.nav-bot ul li ul li a:hover ul.nivel3, .nav-bot ul li ul li:hover ul.nivel3 {
+    display: block;
+    position: absolute;
+    left: 161px;
+    top:0px;
+}
+
+nav ul li ul li a:hover {
+    position: relative;
+}
+
+/* MENU FUERA DEL DESPLEGABLE */
 
 nav> .nav-bot> ul> .button-ticket> a{
     font-family: var(--navtypo);
@@ -135,6 +204,7 @@ nav> .nav-bot> ul> .button-ticket> a:hover{
 
 }
 
+/* EFECTO PARALAX */
 main{
     
 }
@@ -168,8 +238,9 @@ main> .parallax-text{
    padding-top: var(--small);
 }
 
+/* SECIONES DE LA HOME */
 .fest-intro{
-    margin-top: 100vh; 
+    /* margin-top: 100vh;  */
 }
 
 .fest-intro,.artist-lineup,.news,.experience{
@@ -184,6 +255,12 @@ section h2{
 }
 
 /* ARTIST LINE-UP */
+.artist-title{
+    margin-top: 100vh; 
+    color: var(--white);
+    font-size: 4rem;
+}
+
 .artist-section {
     display: flex;
     flex-direction: column;
@@ -197,7 +274,9 @@ section h2{
     
 }
 
-.artist-section > .artist-card .artist-pics
+.artist-section > .artist-card .artist-pics{
+
+}
 
 .artist-section > .artist-card .artist-pics img{
     width: 100%;
