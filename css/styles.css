@@ -240,7 +240,7 @@ main> .parallax-text{
 
 /* SECIONES DE LA HOME */
 .fest-intro{
-    /* margin-top: 100vh;  */
+    padding-top:  20vh; 
 }
 
 .fest-intro,.artist-lineup,.news,.experience{
