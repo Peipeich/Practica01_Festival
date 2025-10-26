@@ -15,7 +15,7 @@
 
 
 :root{
-    --navtypo:"MonumentWideL";
+    --navtypo:"MonumentWideB";
     --maintypo: "MonumentWideB";
     --sectypo:"Harmond";
     --kanjitypo: "Yusei Magic", sans-serif;
@@ -39,16 +39,19 @@
 
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
 body{
     background-color: var(--black);
     
 }
 
 img{
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+video{
     width: 100%;
     height: auto;
     vertical-align: middle;
@@ -92,7 +95,6 @@ nav> .nav-top>a > img{
    height: auto;
    object-fit: cover;
 }
-
 
 
 hr{
@@ -240,7 +242,7 @@ main> .parallax-text{
 
 /* SECIONES DE LA HOME */
 .fest-intro{
-    padding-top:  20vh; 
+    padding-top: 20vh; 
 }
 
 .fest-intro,.artist-lineup,.news,.experience{
@@ -304,7 +306,8 @@ section h2{
 
 .agenda .agenda-line{
     display: flex;
-    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
 
 }
 
@@ -320,15 +323,144 @@ section h2{
 }
 
 
-
 /* ENTRADAS */
 .tarjetas-pago{
+  font-family: var(--maintypo);
   background-color: var(--black);
-  padding: 5rem 10%;
+  margin: 1rem;
+  padding-top: 30vh;
   color: var(--white);
   display: flex;
+  justify-content: space-around;
+  gap: 2rem;
 
 }
+
+.tarjetas-pago h2{
+    font-size: 1.5rem;
+}
+
+.tarjetas-pago p {
+    padding-top: 2rem;
+    
+}
+
+.tarjetas-pago .price{
+    font-size: 1.5rem;    
+    padding-top: 4rem;
+    text-decoration: none;
+    
+}
+
+.tarjetas-pago .price a{
+    text-decoration: none;
+    
+}
+
+.ticket01, .ticket02, .ticket03, .ticket04{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--red);
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.ticket01 {
+    background-color: var(--orange);
+    
+}
+
+.ticket02 {
+    background-color: var(--red);
+    
+}
+
+.ticket03 {
+    background-color: var(--blue);
+    
+}
+
+.ticket04 {
+    background-color: var(--white);
+    color: var(--black);
+    
+}
+.ticket04 .ticket-info > h2{
+    color: var(--black);
+    
+}
+
+.ticket01 > .price a{
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--orange);
+    
+}
+
+.ticket02 > .price a{
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--red);
+    
+}
+
+.ticket03 > .price a{
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--blue);
+    
+}
+
+.ticket04 > .price a{
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--white);
+}
+    
+.ticket01 > .price a:hover{
+    background-color: 
+    var(--orange);
+    border: 0.1rem solid var(--black);
+    color: var(--black);
+    
+}
+
+.ticket02 > .price a:hover{
+    background-color: var(--red);
+    border: 0.1rem solid var(--black);
+    color: var(--black);
+    
+}
+
+.ticket03 > .price a:hover{
+    background-color: var(--blue);
+    border: 0.1rem solid var(--black);
+    color: var(--black);
+    
+}
+
+.ticket04 > .price > a:hover{
+    background-color: var(--white);
+    border: 0.1rem solid var(--black);
+    color: var(--black);
+    
+}
+
+
+/* MARQUESINA  */
 
 .marquesina{
   width: 100%; 
