@@ -9,15 +9,17 @@
 }
 
 @font-face {
-    font-family: Harmond;
-    src: url(/media/typography/Harmond-ExtraBoldExpanded.otf);
+  font-family: Boska-Medium;
+  src: url('/media/typography/Fonts/OTF/Boska-Medium.otf');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
 }
 
-
 :root{
-    --navtypo:"MonumentWideB";
-    --maintypo: "MonumentWideB";
-    --sectypo:"Harmond";
+    --navtypo:MonumentWideB;
+    --maintypo: MonumentWideB;
+    --sectypo: Boska-Medium;
     --kanjitypo: "Yusei Magic", sans-serif;
     --black:rgba(3, 8, 18, 1);
     --blue:rgba(21, 80, 167, 1);
@@ -208,7 +210,7 @@ nav> .nav-bot> ul> .button-ticket> a:hover{
 
 /* EFECTO PARALAX */
 main{
-    
+ padding-top:2rem ;   
 }
 
 main> .background-video{
@@ -327,7 +329,6 @@ section h2{
 .tarjetas-pago{
   font-family: var(--maintypo);
   background-color: var(--black);
-  margin: 1rem;
   padding-top: 30vh;
   color: var(--white);
   display: flex;
@@ -391,70 +392,62 @@ section h2{
     
 }
 
-.ticket01 > .price a{
+.ticket01 > .price a,
+.ticket02 > .price a,
+.ticket03 > .price a,
+.ticket04 > .price a {
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     background-color: var(--black);
+    text-decoration: none;
+     border: 0.1rem solid var(--black); 
+
+   
+}
+
+.ticket01 > .price a{
     color: var(--orange);
     
 }
 
 .ticket02 > .price a{
-    padding: 1rem;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    background-color: var(--black);
     color: var(--red);
     
 }
 
 .ticket03 > .price a{
-    padding: 1rem;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    background-color: var(--black);
     color: var(--blue);
     
 }
 
 .ticket04 > .price a{
-    padding: 1rem;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    background-color: var(--black);
+   
     color: var(--white);
 }
     
 .ticket01 > .price a:hover{
     background-color: 
     var(--orange);
-    border: 0.1rem solid var(--black);
     color: var(--black);
     
 }
 
 .ticket02 > .price a:hover{
     background-color: var(--red);
-    border: 0.1rem solid var(--black);
     color: var(--black);
     
 }
 
 .ticket03 > .price a:hover{
     background-color: var(--blue);
-    border: 0.1rem solid var(--black);
     color: var(--black);
     
 }
 
 .ticket04 > .price > a:hover{
     background-color: var(--white);
-    border: 0.1rem solid var(--black);
     color: var(--black);
     
 }
@@ -475,7 +468,9 @@ section h2{
     animation: mover-marquesina 10s linear infinite ;
     color: var(--orange);
     font-family: var(--sectypo);
-    font-size: var(--mid);
+    font-size: 4rem;
+    letter-spacing: 1rem;
+     margin-right: 5rem;
 }
 
 @keyframes mover-marquesina {
@@ -483,7 +478,7 @@ section h2{
     transform: translateX(0%); 
   }
   100% {
-    transform: translateX(-100%); 
+    transform: translateX(-50%); 
   }
   
 }
@@ -538,32 +533,57 @@ footer .footertopright{
 }
 
 footer .footertopright .footer-contact{
+    font-size: 0.7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: right;
     padding-right: 2rem;
+
+}
+
+footer .footertopright .footer-contact p{
+
+    padding: 1rem;
 }
 
 footer .footertopright .iconosrs{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 footer .footertopright .iconosrs .iconos-top{
     display: flex;
     justify-content: space-between;
+     gap: 1rem;
 }
 
 footer .footertopright .iconosrs .iconos-bot{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+}
+
+footer .footertopright .iconosrs .iconos-top .fa-youtube{
+    color: var(--red);
+}
+
+footer .footertopright .iconosrs .iconos-top .fa-square-instagram{
+    color: var(--orange);
 }
 
 footer .footertopright .iconosrs .iconos-bot .fa-tiktok{
-    font-size: 2.5rem;
+    font-size: 3rem;
+    padding-left: 1rem;
+    color: var(--blue);
+}
+
+footer .footertopright .iconosrs .iconos-bot .fa-square-x-twitter{
+    color: var(--white);
+
 }
 
 .footer-bot{
@@ -585,6 +605,7 @@ footer .footerbotleft .footer-links ul li {
 footer .footerbotleft .footer-links ul li a{
     text-decoration: none;
     color: var(--white);
+    font-size: 0.7rem;
 
 }
 
@@ -608,11 +629,13 @@ footer .footerbotright{
 }
 
 footer .footerbotright .copyright{
+    font-size: 0.7rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     text-align: right;
     padding-right: 2rem;
+    padding-bottom: 1.5rem ;
     
 }
 

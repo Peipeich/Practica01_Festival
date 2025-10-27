@@ -126,7 +126,7 @@
   font-family: 'Boska-BlackItalic';
   src: url('../fonts/Boska-BlackItalic.woff2') format('woff2'),
        url('../fonts/Boska-BlackItalic.woff') format('woff'),
-       url('../fonts/Boska-BlackItalic.ttf') format('truetype');
+       url('.,/fonts/Boska-BlackItalic.ttf') format('truetype');
   font-weight: 900;
   font-display: swap;
   font-style: italic;
