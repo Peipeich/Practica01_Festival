@@ -104,6 +104,7 @@ hr{
     background-color: var(--white);
     
 }
+
 nav> .nav-bot> ul{
     display: flex;
     justify-content: space-between;
@@ -124,6 +125,7 @@ nav> .nav-bot> ul> li a:hover{
     color: var(--orange);
 }
 /* MENÚ DESPLEGABLE CON HOVER */
+
 .nav-bot {
     text-align: center;   
 }
@@ -290,6 +292,58 @@ main> .parallax-text{
 .fest-intro,.artist-lineup,.news,.experience{
   
   color: var(--white);
+
+}
+
+/* SECIONES DE LA HOME ARTIST LINE UP*/
+.artist-hometitle{
+    padding-top: 4rem;
+    text-align: center;
+    color: var(--white);
+    font-size: 4rem;
+
+}
+
+.artist-homesection .day-artists h1{
+     padding-top: 2rem;
+}
+
+.artist-homesection .artist-cardhome {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-top: 2rem;
+    gap: 2rem;
+    width: 100%;
+
+}
+
+.artist-homesection .artist-cardhome img {
+   
+    height: 200px;
+
+}
+
+.alu-btn{
+    margin: 4rem;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+
+.alu-btn a{
+    font-family: var(--maintypo);
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.alu-btn a:hover{
+    background-color: var(--white);
+    color: var(--blue);
 
 }
 
@@ -607,15 +661,17 @@ footer .footertopright .iconosrs{
     font-size: 4rem;
 }
 
-footer .footertopright .iconosrs .iconos-top{
+footer .footertopright .iconosrs .iconos-top, footer .footertopright .iconosrs .iconos-bot{
     display: flex;
     justify-content: space-between;
+
+}
+
+footer .footertopright .iconosrs .iconos-top{
      gap: 1rem;
 }
 
 footer .footertopright .iconosrs .iconos-bot{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 
 }
@@ -711,6 +767,47 @@ footer .footerbotright .copyright{
 
     }
 
+    footer .footertopright{
+    display: flex;
+    flex-direction: column;
+    }
+
+    footer .footertopright .footer-contact{
+    text-align: left;
+    }
+
+    footer .footertopright .iconosrs .iconos-top,  footer .footertopright .iconosrs .iconos-bot{
+    justify-content: flex-start;
+   }
+
+    footer .footertopright .iconosrs .iconos-bot{
+    gap: 2rem;
+   }
+
+   footer .footerbotleft{
+    display: flex;
+    flex-direction: column;
+    }
+
+    footer .footerbotright{
+    display: flex;
+    flex-direction: column-reverse;
+    }
+
+    footer .footerbotright .copyright{
+    padding-top: 3rem;
+    text-align: left;
+    font-size: 1rem;
+        
+    }
+
+    footer .footerbotright img{
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+    padding-top: 3rem;
+
+    }
 }
 
 

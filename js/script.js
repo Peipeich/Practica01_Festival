@@ -26,7 +26,7 @@ function goToSlide(index) {
 showSlide(currentSlide);
 setInterval(nextSlide, 3000); // cambia cada 5 segundos
 
-// carrusel movil
+// Carrusel movil
 
 
 function showSlide(index) {
