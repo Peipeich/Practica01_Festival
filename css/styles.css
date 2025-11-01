@@ -254,6 +254,10 @@ nav> .nav-bot> ul> .button-ticket> a:hover{
 
 }
 
+nav> .nav-bot900{
+    display: none;
+}
+
 /* EFECTO PARALAX */
 main{
  padding-top:2rem ;   
@@ -856,6 +860,7 @@ footer .footerbotright .copyright{
 
 
 @media (max-width: 900px) {
+
 /* NAV  HAMBURGUESA*/
 nav> .nav-top .menu-icon-r .menu-bars{
     display: block;
@@ -869,36 +874,12 @@ nav> .nav-top .menu-icon-r .menu-bars:hover{
 }
 
 .nav-bot {
-    /* display: none;    */
+    display: none;   
 }
 
 .carrusel {
    padding-top: 0;   
 }
-
-/* MENU DESPLEGABLE */
-nav> .nav-bot{
-    padding-top: 2rem;
-    display: flex;
-    justify-content: center;
-    
-}
-
-nav> .nav-bot> ul{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  
-}
-
-
-
-nav> .nav-bot> ul> li a{
-    font-size: 2rem;
-    
-    
-}
-
 
 /* IMAGEN DEL NAV */
 nav> .nav-top>a{
@@ -906,20 +887,76 @@ nav> .nav-top>a{
 
 } 
 
- /* ARTIST LINE-UP */
-.artist-section .artist-bot{
-     grid-template-columns: auto auto;
+/* MENU DESPLEGABLE */
+
+
+nav> .nav-bot900{
+    display: none;
 }
 
-.fest-intro{
-     
+nav .nav-bot900.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.fest-intro,.artist-lineup,.news,.experience{
-  
-  color: var(--white);
 
+nav> .nav-bot900> ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
 }
+
+nav> .nav-bot900 ul .desple-top div {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1rem; 
+}
+
+
+nav> .nav-bot900> ul .desple-top a, nav> .nav-bot900> ul .desple-top p {
+    color: var(--white);
+    font-family: var(--navtypo);
+    font-size: 2rem;
+    text-decoration: none;   
+}
+
+nav> .nav-bot900> ul .button-ticket a{
+    display: flex;
+     justify-content: center; 
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--orange);
+    color: var(--black);
+    font-family: var(--navtypo);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.desple-bot .desp-alu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+} 
+
+.desple-bot .desp-info {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+} 
+
+.desple-bot .desp-exp {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+} 
+
+
+
+
 
 /* SECIONES DE LA HOME ARTIST LINE UP*/
 
@@ -927,8 +964,17 @@ nav> .nav-top>a{
     display: grid;
     grid-template-columns: auto auto;
     
+    
 }
 
+/* ARTIST LINE-UP */
+.artist-section .artist-bot{
+    grid-template-columns: auto auto;
+}
+
+.fest-intro{
+    
+}
 
 
 
@@ -936,9 +982,15 @@ nav> .nav-top>a{
 }
 
 @media (max-width: 600px) {
+    /* SECIONES DE LA HOME ARTIST LINE UP*/
+    .artist-homesection .artist-cardhome {
+    grid-template-columns:  auto;
+    
+    }
+
 
  /* ARTIST LINE-UP */
-.artist-section .artist-bot{
+    .artist-section .artist-bot{
      grid-template-columns: auto;
 }
 }

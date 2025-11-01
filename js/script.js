@@ -1,5 +1,7 @@
 console.log("Online!")
 
+// Carrusel (no mio)
+
 let currentSlide = 0;
 const slides = document.querySelectorAll(".carrusel > div:not(.carousel-dots)");
 const dots = document.querySelectorAll(".dot");
@@ -82,3 +84,5 @@ carrusel.addEventListener("touchend", () => {
   }
   autoSlide = setInterval(nextSlide, 5000); // reanuda el auto-slide
 });
+
+// Menu (mio)
