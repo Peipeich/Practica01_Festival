@@ -76,20 +76,64 @@ nav> .nav-top{
     padding-bottom: var(--small);
 }
 
-nav> .nav-top .menu-icon{
+nav> .nav-top .menu-search{
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     color: var(--white);
 }
 
-nav> .nav-top .menu-icon:hover{
+nav> .nav-top .menu-icon-r{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+nav> .nav-top .menu-icon-r .menu-bars{
+    display: none;
+}
+
+nav> .nav-top .menu-icon-r .menu-bars, nav> .nav-top .menu-icon-r .menu-cart{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+nav> .nav-top .menu-icon-r > a{
+    font-family: var(--maintypo);
+    font-size: 0.7rem;
+    color: var(--white);
+}
+
+nav> .nav-top .menu-search:hover{
     color: var(--orange);
 }
 
+nav> .nav-top .menu-icon-r{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav> .nav-top .menu-icon-r > a:hover{
+    color: var(--orange);
+}
+
+nav> .nav-top .menu-icon-r .menu-bars:hover{
+ color: var(--red);
+
+}
+
+nav> .nav-top .menu-icon-r .menu-cart:hover{
+    color: var(--blue);
+}
+
+/* IMAGEN DEL NAV */
 nav> .nav-top>a{
     display: flex;
     justify-content: center;
+    padding-left: 2rem;
+
 } 
 
 nav> .nav-top>a > img{
@@ -327,8 +371,7 @@ main> .parallax-text{
     margin: 4rem;
     display: flex;
     justify-content: center;
-    
-    
+       
 }
 
 
@@ -559,7 +602,6 @@ main> .parallax-text{
     
 }
 
-
 /* MARQUESINA  */
 
 .marquesina{
@@ -617,7 +659,7 @@ footer .footer-top .newsletter label{
 
 footer .footer-top .newsletter input{
     padding: 0.5rem;
-    padding-left: 7rem;
+    font-family: var(--maintypo);
 }
 
 footer .footer-top .newsletter button{
@@ -814,11 +856,83 @@ footer .footerbotright .copyright{
 
 
 @media (max-width: 900px) {
+/* NAV  HAMBURGUESA*/
+nav> .nav-top .menu-icon-r .menu-bars{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+nav> .nav-top .menu-icon-r .menu-bars:hover{
+ color: var(--red);
+
+}
+
+.nav-bot {
+    /* display: none;    */
+}
+
+.carrusel {
+   padding-top: 0;   
+}
+
+/* MENU DESPLEGABLE */
+nav> .nav-bot{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav> .nav-bot> ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+}
+
+
+
+nav> .nav-bot> ul> li a{
+    font-size: 2rem;
+    
+    
+}
+
+
+/* IMAGEN DEL NAV */
+nav> .nav-top>a{
+    padding-left: 4rem;
+
+} 
 
  /* ARTIST LINE-UP */
 .artist-section .artist-bot{
      grid-template-columns: auto auto;
 }
+
+.fest-intro{
+     
+}
+
+.fest-intro,.artist-lineup,.news,.experience{
+  
+  color: var(--white);
+
+}
+
+/* SECIONES DE LA HOME ARTIST LINE UP*/
+
+.artist-homesection .artist-cardhome {
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+
+
+
+
+
 }
 
 @media (max-width: 600px) {

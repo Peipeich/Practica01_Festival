@@ -1,0 +1,246 @@
+/* MENÚ */
+nav{
+    position: fixed;
+    width: 100%;
+    padding: var(--small);
+    z-index: 9999;
+    background-color: var(--black);
+    
+}
+
+nav> .nav-top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--small);
+}
+
+nav> .nav-top .menu-search{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+nav> .nav-top .menu-icon-r{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+nav> .nav-top .menu-icon-r .menu-bars{
+    display: none;
+}
+
+nav> .nav-top .menu-icon-r .menu-bars, nav> .nav-top .menu-icon-r .menu-cart{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+nav> .nav-top .menu-icon-r > a{
+    font-family: var(--maintypo);
+    font-size: 0.7rem;
+    color: var(--white);
+}
+
+nav> .nav-top .menu-search:hover{
+    color: var(--orange);
+}
+
+nav> .nav-top .menu-icon-r{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav> .nav-top .menu-icon-r > a:hover{
+    color: var(--orange);
+}
+
+nav> .nav-top .menu-icon-r .menu-bars:hover{
+ color: var(--red);
+
+}
+
+nav> .nav-top .menu-icon-r .menu-cart:hover{
+    color: var(--blue);
+}
+
+/* IMAGEN DEL NAV */
+nav> .nav-top>a{
+    display: flex;
+    justify-content: center;
+    padding-left: 2rem;
+
+} 
+
+nav> .nav-top>a > img{
+   width: 40%;
+   height: auto;
+   object-fit: cover;
+}
+
+
+hr{
+    height: 0.1rem;
+    background-color: var(--white);
+    
+}
+
+nav> .nav-bot> ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--small);
+    list-style: none;
+}
+
+nav> .nav-bot> ul> li a{
+    text-decoration: none;
+    font-family: var(--navtypo);
+    font-size: 0.7rem;
+    color: var(--white);
+    
+}
+
+nav> .nav-bot> ul> li a:hover{
+    color: var(--orange);
+}
+/* MENÚ DESPLEGABLE CON HOVER */
+
+.nav-bot {
+    text-align: center;   
+}
+
+.nav-bot ul {
+    list-style-type: none;
+}
+
+.nav-bot ul li {
+    width: 162px;
+}
+
+.nav-bot ul li a {
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 8px;
+    position: relative;
+}
+
+.nav-bot ul li ul li a {
+    width: 160px;
+    padding: 8px 0px;
+    border-top-color: transparent;
+}
+
+.nav-bot ul li ul {
+    display: none;
+}
+
+
+.nav-bot ul li.desple-top { 
+    float: left;
+    margin-right: 1px;
+}
+
+.nav-bot ul li a.desple-top, .nav-bot ul li a.desple-bot {
+    display: block;
+    position: relative;
+}
+
+.nav-bot ul li:hover {
+    position: relative;
+}
+
+.nav-bot ul li a:hover, .nav-bot ul li:hover a.desple-top {
+    position: relative;
+}
+
+.nav-bot ul li:hover  ul.desple-bot, .nav-bot ul li a:hover  ul.desple-bot{
+    display: block;
+    position: absolute;left: 0px;
+}
+
+
+.nav-bot ul li ul li a:hover ul.nivel3, .nav-bot ul li ul li:hover ul.nivel3 {
+    display: block;
+    position: absolute;
+    left: 161px;
+    top:0px;
+}
+
+nav ul li ul li a:hover {
+    position: relative;
+}
+
+/* MENU FUERA DEL DESPLEGABLE */
+
+nav> .nav-bot> ul> .button-ticket> a{
+    font-family: var(--navtypo);
+    background-color: var(--orange);
+    border-radius: 1rem;
+    padding: 0.7rem;
+    color: var(--black);
+
+}
+
+nav> .nav-bot> ul> .button-ticket> a:hover{
+    background-color: var(--white);
+    color: var(--black);
+
+}
+
+@media (max-width: 900px) {
+    
+/* NAV  HAMBURGUESA*/
+nav> .nav-top .menu-icon-r .menu-bars{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+nav> .nav-top .menu-icon-r .menu-bars:hover{
+ color: var(--red);
+
+}
+
+.nav-bot {
+    /* display: none;    */
+}
+
+.carrusel {
+   padding-top: 0;   
+}
+
+/* MENU DESPLEGABLE */
+nav> .nav-bot{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav> .nav-bot> ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+}
+
+
+
+nav> .nav-bot> ul> li a{
+    font-size: 2rem;
+    
+    
+}
+
+
+/* IMAGEN DEL NAV */
+nav> .nav-top>a{
+    padding-left: 4rem;
+
+}
+} 
