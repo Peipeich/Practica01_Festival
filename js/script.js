@@ -1,5 +1,3 @@
-console.log(totalPrice)
-
 // LÓGICA DEL MENU 
 
 // SELECCIÓN DE ELEMENTOS DEL HTML 
@@ -113,33 +111,81 @@ function goToSlide(index) {
 showSlide(currentSlide);
 let autoSlide = setInterval(nextSlide, 5000);
 
-// --- NUEVO: Soporte táctil ---
-let startX = 0;
-let endX = 0;
-const carrusel = document.querySelector(".carrusel");
 
-carrusel.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  clearInterval(autoSlide); // pausa el auto-slide mientras se desliza
-});
 
-carrusel.addEventListener("touchmove", (e) => {
-  endX = e.touches[0].clientX;
-});
+// COUNTDOWN
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 25, 2026 00:00:00").getTime();
 
-carrusel.addEventListener("touchend", () => {
-  let diff = startX - endX;
-  if (Math.abs(diff) > 50) { // para evitar toques accidentales
-    if (diff > 0) {
-      nextSlide(); // swipe hacia la izquierda → siguiente
-    } else {
-      prevSlide(); // swipe hacia la derecha → anterior
-    }
+// Update the count down every 1 second
+var x = setInterval(function() {
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
   }
-  autoSlide = setInterval(nextSlide, 5000); // reanuda el auto-slide
-});
+}, 1000);
+
+
 
 // TICKETS VENTANA MODAL
+let btnopenModal = document.querySelector("#openModal")
+btnopenModal.addEventListener("click", openModalWindow);
+
+
+// Lógica cerrar de la ventana modal
+
+let btncloseModal = document.querySelector(".close")
+let btnacceptModal = document.querySelector("#closeModal")
+
+btncloseModal.addEventListener("click", closeModalWindow);
+btnacceptModal.addEventListener("click", closeModalWindow);
+
+//Función propia para abrir ventana modal
+function openModalWindow(){
+    let modalWindow = document.querySelector("#modalWindow");
+
+    modalWindow.classList.add("show-modal");
+    
+};
+
+//Función propia para cerrar ventana modal
+function closeModalWindow(){
+
+    let modalWindow = document.querySelector("#modalWindow");
+
+    modalWindow.classList.remove("show-modal");
+    
+};
+
+// Cerrar ventana modal cuando se detecta click fuera
+window.addEventListener("click", function(event){
+
+    // llama solo a la función de cerrar modal siempre que el click no sea en la propia ventana modal 
+    let modal = document.querySelector("#modalWindow")
+
+    if (event.target == modal){
+        closeModalWindow();
+    }
+
+})
+
 
 // TICKETS COMPRA
 document.addEventListener("DOMContentLoaded", function () {

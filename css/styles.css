@@ -333,29 +333,98 @@ main> .parallax-text{
 }
 
 
+
 /* SECIONES DE LA HOME */
 
-.fest-intro{
-     
+#demo{
+    color: var(--white);
+    font-family: var(--maintypo);
+    font-size: 7rem;
+    text-align: center;
 }
 
 .fest-intro,.artist-lineup,.news,.experience{
-  
-  color: var(--white);
+    color: var(--white);
+    
+}
 
+.fest-intro{
+    margin: 1rem;
+    display: flex;
+    font-family: var(--maintypo);
+
+}
+
+.fest-intro .festIntro-right{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.fest-intro .festIntro-right .festIntro-text{
+    width: 50vw ;
+    padding-right: 2rem;
+}
+
+.fest-intro .festIntro-right .festIntro-text{
+    width: 50vw ;
+    padding-right: 2rem;
+}
+
+.fest-intro .festIntro-right .festIntro-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+
+
+}
+
+.fest-intro .festIntro-right .festIntro-btn a{
+    padding: 1rem;
+    border-radius: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: var(--orange);
+    color: var(--black);
+    text-decoration: none;
+}
+
+.fest-intro .festIntro-right .festIntro-btn a:hover{
+    background-color: var(--white);
+}
+
+.fest-intro .festIntro-right .festIntro-text h2{
+    font-size: 4rem;
+    
+}
+
+.fest-intro .festIntro-right .festIntro-text p{
+    padding-top: var(--mid);
+    text-align: justify;
+    
+}
+
+.fest-intro .festIntro-right .festIntro-img img{
+    width: 50vw;
 }
 
 /* SECIONES DE LA HOME ARTIST LINE UP*/
 .artist-hometitle{
+    font-family: var(--maintypo);
     padding-top: 4rem;
     text-align: center;
     color: var(--white);
     font-size: 4rem;
+}
+
+.artist-homesection{
+    margin: var(--mid);
 
 }
 
 .artist-homesection .day-artists h1{
      padding-top: var(--mid);
+    font-family: var(--maintypo);
 }
 
 .artist-homesection .artist-cardhome {
@@ -364,11 +433,13 @@ main> .parallax-text{
     padding-top: var(--mid);
     gap: var(--mid);
     width: 100%;
+    font-family: var(--maintypo);
 
 }
 
+
+
 .artist-homesection .artist-cardhome img {
-   
     height: 200px;
 
 }
@@ -398,26 +469,84 @@ main> .parallax-text{
 
 
 /* SECIONES DE LA HOME NOTICIAS*/
-.news .noticias-fila  {
+.news{
+    padding: 2rem;
+    font-family: var(--maintypo);
+}
+
+.news> .new-title h2 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.news .noticias-fila {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   text-align: center;
 }
 
 .news .noticias-fila .tarjeta-noticias{
    padding: var(--mid);
 }
 
-.news .tarjeta-noticias .tn-img{
+.news .noticias-fila .tarjeta-noticias .tn-img img{
+ 
+    height: 200px;
+}
+
+.news .tarjeta-noticias .tn-btn a{
+    font-family: var(--maintypo);
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    text-decoration: none;
     
 }
 
+.news .tarjeta-noticias .tn-btn {
+    padding-top: var(--mid);
+    display: flex;
+    justify-content: center
+    
+}
+
+.news .tarjeta-noticias .tn-btn a:hover {
+    background-color: var(--white);
+    color: var(--blue);  
+}
 
 /* ARTIST LINE-UP */
+.scroll-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top:80vh;
+    left: 45%;
+    color: var(--white);
+
+}
+
+.scroll-down p{
+    font-family: var(--maintypo); 
+    font-size: 1rem;
+    
+}
+
+.scroll-down i{
+    padding-top: 1rem;
+    font-size: 4rem;
+    
+}
+
 .artist-title{
-    margin-top: 100vh; 
+    margin-top: 100vh;
+    font-family: var(--maintypo); 
     color: var(--white);
     font-size: 4rem;
+    text-align: center;
 }
 
 .artist-section {
@@ -433,14 +562,60 @@ main> .parallax-text{
     
 }
 
-.artist-section > .artist-card .artist-pics{
-
+.artist-section > .artist-card .artist-pics, .artist-bot > .artist-card .artist-pics{
+     position: relative;
+     overflow: hidden;
 }
 
-.artist-section > .artist-card .artist-pics img{
+
+
+.artist-section > .artist-card .artist-pics img,.artist-bot > .artist-card .artist-pics img{
     width: 100%;
-    height: auto;
     object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* HOVER DE LAS IMAGENES DE ARTIST LINE UP  */
+.artist-pics:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.artist-bot >.artist-card.artist-pics:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* TEXTO QUE APARECE */
+.artist-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--maintypo);
+}
+
+.artist-pics:hover .artist-info {
+  opacity: 1;
+}
+
+.artist-section  .artist-card .artist-info {
+    font-family: var(--maintypo);
+    text-align: center;
+}
+
+.artist-section  .artist-card .artist-info ul li{
+  list-style: none;
 }
 
 .artist-section .artist-bot{
@@ -455,37 +630,98 @@ main> .parallax-text{
     height: 300px;
 }
 
- 
-.agenda{
+
+/* INFORMATION */
+.info{
+    padding-top: 30vh;
+    font-family: var(--maintypo);
     color: var(--white);
+}
+
+.info >h2{
+    text-align: center;
+    font-size: 4rem;
+}
+
+.info >p{
+    text-align: center;
+}
+
+.info >ul{
+    padding-top: 2rem;
+    display:grid;
+    grid-template-columns: auto auto auto;
+    gap: 2rem;
+}
+
+.info >ul li {
+   list-style: none;
     
 }
 
-.agenda .agenda-line{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
+.info >ul li p{
+    text-align: justify;
+    
 }
 
-.agenda .agenda-line p{
+iframe{
+    width: 100%;
+}
+
+ /*NOTICIAS*/
+.news-page {
+    padding: 20vh 2rem 2rem 2rem;
+    font-family: var(--maintypo);
+    color: var(--white);
+}
+
+.news-page > .new-title h2 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.news-page .noticias-fila {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+}
+
+.news-page  .noticias-fila .tarjeta-noticias{
+   padding: var(--mid);
+}
+
+.news-page .noticias-fila .tarjeta-noticias .tn-img img{
+    height: 200px;
+}
+
+.news-page .tarjeta-noticias .tn-btn a{
+    font-family: var(--maintypo);
+    padding: 1rem;
+    border-radius: 1rem;
     background-color: var(--blue);
-    padding: 3rem;
+    color: var(--white);
+    text-decoration: none;
+    
 }
 
-.agenda .agenda-line img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+.news-page .tarjeta-noticias .tn-btn {
+    padding-top: var(--mid);
+    display: flex;
+    justify-content: center;
+    
 }
 
+.news-page .tarjeta-noticias .tn-btn a:hover {
+    background-color: var(--white);
+    color: var(--blue);  
+}
 
 /* ENTRADAS */
 #tickets{
     font-family: var(--maintypo);
     padding-top: 20vh;
     color: var(--white);
-
 }
 
 #tickets h1{
@@ -498,7 +734,6 @@ main> .parallax-text{
   justify-content: center;
   gap: var(--mid);
   flex-wrap: wrap;
-
 }
 
 .tarjetas-pago h2{
@@ -1070,6 +1305,15 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 
 .fest-intro{
     
+}
+
+/* NOTICIAS  */
+.news .noticias-fila {
+   flex-wrap: wrap;
+}
+
+.news .noticias-fila .tarjeta-noticias {
+    width: 100%;
 }
 
 /* FOOTER */
