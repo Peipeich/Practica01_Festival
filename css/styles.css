@@ -648,7 +648,8 @@ main> .parallax-text{
 
 /* FOOTER */
 footer{
-    margin: 1rem;
+    padding: 1rem;
+    background-color: var(--black);
     color: var(--white);
     font-family: var(--navtypo);
 }
