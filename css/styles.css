@@ -43,6 +43,8 @@
 
 body{
     background-color: var(--black);
+    width: 100vw;
+    height: 100vh;
     
 }
 
@@ -132,7 +134,7 @@ nav> .nav-top .menu-icon-r .menu-cart:hover{
 nav> .nav-top>a{
     display: flex;
     justify-content: center;
-    padding-left: 2rem;
+    padding-left: var(--mid);
 
 } 
 
@@ -260,7 +262,7 @@ nav> .nav-bot900{
 
 /* EFECTO PARALAX */
 main{
- padding-top:2rem ;   
+ padding-top:var(--mid) ;   
 }
 
 main> .background-video{
@@ -353,14 +355,14 @@ main> .parallax-text{
 }
 
 .artist-homesection .day-artists h1{
-     padding-top: 2rem;
+     padding-top: var(--mid);
 }
 
 .artist-homesection .artist-cardhome {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    padding-top: 2rem;
-    gap: 2rem;
+    padding-top: var(--mid);
+    gap: var(--mid);
     width: 100%;
 
 }
@@ -403,7 +405,7 @@ main> .parallax-text{
 }
 
 .news .noticias-fila .tarjeta-noticias{
-   padding: 2rem;
+   padding: var(--mid);
 }
 
 .news .tarjeta-noticias .tn-img{
@@ -427,7 +429,7 @@ main> .parallax-text{
 }
 
 .day-artists{
-    padding-bottom: 2rem;
+    padding-bottom: var(--mid);
     
 }
 
@@ -444,8 +446,8 @@ main> .parallax-text{
 .artist-section .artist-bot{
     display: grid;
     grid-template-columns: auto auto auto;
-    padding-top: 2rem;
-    gap: 2rem;
+    padding-top: var(--mid);
+    gap: var(--mid);
     width: 100%;
 }
 
@@ -479,14 +481,22 @@ main> .parallax-text{
 
 
 /* ENTRADAS */
+#tickets{
+    font-family: var(--maintypo);
+    padding-top: 20vh;
+    color: var(--white);
+
+}
+
+#tickets h1{
+    font-size: 4rem;
+}
+
 .tarjetas-pago{
-  font-family: var(--maintypo);
-  background-color: var(--black);
-  padding-top: 30vh;
-  color: var(--white);
+  padding-top: var(--mid);
   display: flex;
-  justify-content: space-around;
-  gap: 2rem;
+  justify-content: center;
+  gap: var(--mid);
   flex-wrap: wrap;
 
 }
@@ -496,7 +506,7 @@ main> .parallax-text{
 }
 
 .tarjetas-pago p {
-    padding-top: 2rem;
+    padding-top: var(--mid);
     
 }
 
@@ -517,8 +527,8 @@ main> .parallax-text{
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--red);
-    border-radius: 2rem;
-    padding: 2rem;
+    border-radius: var(--mid);
+    padding: var(--mid);
 }
 
 .ticket01 {
@@ -645,7 +655,7 @@ footer{
 
 
 footer .footer-top{
-    padding-bottom: 2rem;
+    padding-bottom: var(--mid);
     display: flex;
     justify-content: space-between;
 }
@@ -658,7 +668,7 @@ footer .footer-top .newsletter{
 
 
 footer .footer-top .newsletter label{
-    font-size: 2rem;
+    font-size: var(--mid);
 }
 
 footer .footer-top .newsletter input{
@@ -691,7 +701,7 @@ footer .footertopright .footer-contact{
     flex-direction: column;
     justify-content: center;
     text-align: right;
-    padding-right: 2rem;
+    padding-right: var(--mid);
 
 }
 
@@ -742,7 +752,7 @@ footer .footertopright .iconosrs .iconos-bot .fa-square-x-twitter{
 }
 
 .footer-bot{
-    padding-top: 2rem;
+    padding-top: var(--mid);
     display: flex;
     justify-content: space-between;
 }
@@ -789,77 +799,16 @@ footer .footerbotright .copyright{
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
-    padding-right: 2rem;
+    padding-right: var(--mid);
     padding-bottom: 1.5rem ;
     
 }
 
 /* Media querys */
 
-/* footer cambios */
-@media (max-width: 1120px) {
-    footer{
-    display: flex;
-    flex-direction: column;
-    }
+ /* TABLET */
 
-    .footer-top{
-    flex-direction: column;
-
-    }
-
-    .footer-bot{
-    flex-direction: column;
-
-    }
-
-    footer .footertopright{
-    display: flex;
-    flex-direction: column;
-    }
-
-    footer .footertopright .footer-contact{
-    text-align: left;
-    }
-
-    footer .footertopright .iconosrs .iconos-top,  footer .footertopright .iconosrs .iconos-bot{
-    justify-content: flex-start;
-   }
-
-    footer .footertopright .iconosrs .iconos-bot{
-    gap: 2rem;
-   }
-
-   footer .footerbotleft{
-    display: flex;
-    flex-direction: column;
-    }
-
-    footer .footerbotright{
-    display: flex;
-    flex-direction: column-reverse;
-    }
-
-    footer .footerbotright .copyright{
-    padding-top: 3rem;
-    text-align: left;
-    font-size: 1rem;
-        
-    }
-
-    footer .footerbotright img{
-    width: 20%;
-    height: auto;
-    object-fit: cover;
-    padding-top: 3rem;
-
-    }
-}
-
-
-
-
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
 /* NAV  HAMBURGUESA*/
 nav> .nav-top .menu-icon-r .menu-bars{
@@ -894,18 +843,19 @@ nav> .nav-bot900{
     display: none;
 }
 
-nav .nav-bot900.active {
+.nav-bot900.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 
 nav> .nav-bot900> ul{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--mid);
     
 }
 
@@ -920,43 +870,46 @@ nav> .nav-bot900 ul .desple-top div {
 nav> .nav-bot900> ul .desple-top a, nav> .nav-bot900> ul .desple-top p {
     color: var(--white);
     font-family: var(--navtypo);
-    font-size: 2rem;
+    font-size: var(--mid);
     text-decoration: none;   
 }
 
 nav> .nav-bot900> ul .button-ticket a{
     display: flex;
-     justify-content: center; 
+    justify-content: center; 
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--orange);
     color: var(--black);
     font-family: var(--navtypo);
-    font-size: 2rem;
+    font-size: var(--mid);
     text-decoration: none;
 }
 
-.desple-bot .desp-alu {
-    display: none;
-    flex-direction: column;
-    text-align: center;
+nav> .nav-bot900> ul .desple-top  .desple-bot .desp-alu>a {
+    color: var(--orange);
 } 
 
-.desple-bot .desp-info {
-    display: none;
-    flex-direction: column;
-    text-align: center;
+nav> .nav-bot900> ul .desple-top .desple-bot .desp-info>a {
+    color: var(--red); 
 } 
 
-.desple-bot .desp-exp {
-    display: none;
-    flex-direction: column;
-    text-align: center;
+nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
+    color: var(--blue);
+   
 } 
 
+.nav-bot900 .desple-bot {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
 
-
-
+.nav-bot900 .desple-bot.open {
+  display: flex;
+}
 
 /* SECIONES DE LA HOME ARTIST LINE UP*/
 
@@ -976,7 +929,65 @@ nav> .nav-bot900> ul .button-ticket a{
     
 }
 
+/* FOOTER */
+ footer{
+    display: flex;
+    flex-direction: column;
+    }
 
+    .footer-top{
+    flex-direction: column;
+
+    }
+
+    .footer-bot{
+    flex-direction: column;
+
+    }
+
+    footer .footertopright{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    footer .footertopright .footer-contact{
+    text-align: left;
+    }
+
+    footer .footertopright .iconosrs .iconos-top,  footer .footertopright .iconosrs .iconos-bot{
+    justify-content: flex-start;
+   }
+
+    footer .footertopright .iconosrs .iconos-bot{
+    gap: var(--mid);
+   }
+
+   footer .footerbotleft{
+    display: flex;
+   
+    }
+
+    footer .footerbotright{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    }
+
+    footer .footerbotright .copyright{
+    padding-top: 3rem;
+    text-align: left;
+    font-size: 1rem;
+        
+    }
+
+    footer .footerbotright img{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    padding-top: var(--mid);
+
+    }
 
 
 }

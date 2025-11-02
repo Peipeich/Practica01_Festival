@@ -1,5 +1,59 @@
 console.log("Online!")
 
+// LÓGICA DEL MENU 
+
+// SELECCIÓN DE ELEMENTOS DEL HTML 
+let burger = document.querySelector(".menu-bars> i");
+let menu_open = document.querySelector("nav .nav-bot900");
+
+// Definimos evento click sobre el boton del menú
+burger.addEventListener("click", function(){
+    burger.classList.toggle("fa-bars");
+    burger.classList.toggle("fa-times");
+    menu_open.classList.toggle("active");
+});
+
+
+
+
+// ABRIR SUBMENUS
+
+// === SUBMENÚS MÓVILES (versión acordeón) ===
+const chevrons = document.querySelectorAll(".nav-bot900 .fa-chevron-down");
+
+chevrons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    const li = icon.closest(".desple-top");
+    const submenu = li.querySelector(".desple-bot");
+
+    //  Cierra todos los submenús antes de abrir uno nuevo
+    document.querySelectorAll(".nav-bot900 .desple-bot.open").forEach((openMenu) => {
+      if (openMenu !== submenu) {
+        openMenu.classList.remove("open");
+        const openIcon = openMenu.closest(".desple-top").querySelector(".fa-chevron-up");
+        if (openIcon) {
+          openIcon.classList.remove("fa-chevron-up");
+          openIcon.classList.add("fa-chevron-down");
+        }
+      }
+    });
+
+    //  Alterna el menú actual
+    submenu.classList.toggle("open");
+
+    // Cambia el ícono del desplegable
+    icon.classList.toggle("fa-chevron-down");
+    icon.classList.toggle("fa-chevron-up");
+  });
+});
+
+
+
+
+
+
+
+
 // Carrusel (no mio)
 
 let currentSlide = 0;
