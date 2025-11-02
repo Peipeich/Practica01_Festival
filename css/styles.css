@@ -616,6 +616,148 @@ main> .parallax-text{
     
 }
 
+/* VENTANA MODAL  */
+#modalWindow {
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* opacity: 0; */
+
+    /* Esto permite animar la propiedad display de none a block */
+    transition: all 0.3s ease-in-out;
+    transition-behavior: allow-discrete;
+}
+
+#modalWindow.show-modal {
+    display: block;
+    opacity: 1;
+}
+
+#modalWindow .modal-content {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: var(--maintypo);
+    margin: 15% auto;
+    padding: var(--mid);
+    max-width: 564px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+#modalWindow .modal-content h2 {
+    font-size: 2rem;
+}
+
+#modalWindow .modal-content >p {
+   padding-top: var(--small);
+}
+
+#modalWindow .modal-content hr {
+    color: var(--black);
+}
+
+#modalWindow .modal-content .close {
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* INTERIOR DEL MODAL WINDOW  */
+/* Styling the form inside #buyTicket */
+#buyTicket form {
+    max-width: 728px;
+    min-height: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#buyTicket form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--input-margin);
+    gap: 2rem;
+}
+
+#buyTicket form label {
+    font-size: 1.4rem;
+    width: 80%;
+    min-width: 5rem;
+    margin: var(--input-margin);
+    color: var(--primary-color);
+}
+
+#buyTicket form input[type="number"] {
+    font-size: 1.4rem;
+    width: 20%;
+    min-width: 3rem;
+    color: var(--primary-color);
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+#buyTicket form input[type="number"]:focus {
+    outline: none;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+}
+
+#buyTicket form .total-price-cont {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 0 0;
+}
+
+#buyTicket form #buyFood.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+#buyTicket form .total-price-cont p {
+    color: var(--black);
+    padding-bottom: var(--small);
+}
+
+#buyTicket form input[type="submit"] {
+    padding: var(--small);
+    background-color: var(--black);
+    color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+#buyTicket form input[type="submit"]:hover {
+    background-color: white;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
 /* MARQUESINA  */
 
 .marquesina{

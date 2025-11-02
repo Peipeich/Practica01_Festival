@@ -1,4 +1,4 @@
-console.log("Online!")
+console.log(totalPrice)
 
 // LÓGICA DEL MENU 
 
@@ -139,4 +139,42 @@ carrusel.addEventListener("touchend", () => {
   autoSlide = setInterval(nextSlide, 5000); // reanuda el auto-slide
 });
 
-// Menu (mio)
+// TICKETS VENTANA MODAL
+
+// TICKETS COMPRA
+document.addEventListener("DOMContentLoaded", function () {
+    const inputs = document.querySelectorAll('input[type="number"]');
+    const totalPriceElement = document.getElementById("totalPrice");
+
+    // Añade a cada input un evento change para calcular el precio total
+    inputs.forEach((input) => {
+        input.addEventListener("change", calculateTotalPrice);
+    });
+
+    // Función para calcular el precio total
+    function calculateTotalPrice() {
+        let totalPrice = 0;
+        inputs.forEach((input) => {
+            const price = parseFloat(input.dataset.price) || 0;
+            const quantity = parseInt(input.value) || 0;
+            totalPrice += price * quantity;
+
+            // Si el precio es mayor que 0, se habilita el botón de comprar
+            if (totalPrice > 0) {
+                document.getElementById("buyTickets").classList.remove("disabled");
+            } else {
+                document.getElementById("buyTickets").classList.add("disabled");
+            }
+        });
+        totalPriceElement.textContent = "¥" + totalPrice.toLocaleString("ja-JP");
+
+    }
+
+    // La primera llamada a la función hará el calculo inicial para poner 0.00 €
+    calculateTotalPrice();
+
+    // Evitar el envio del formulario si el usuario pulsa enter o el precio es 0
+    document.getElementById("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+    });
+});
