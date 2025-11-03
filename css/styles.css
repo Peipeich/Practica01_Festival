@@ -43,8 +43,9 @@
 
 body{
     background-color: var(--black);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     
 }
 
@@ -296,11 +297,13 @@ main> .parallax-text{
 
 /* CARRUSEL */
 .carrusel {
-  padding-top: 20vh;
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
+  font-family: var(--maintypo);
+  font-size: var(--mid);
+
 }
 
 .carrusel > div {
@@ -328,13 +331,32 @@ main> .parallax-text{
   position: absolute;
   bottom: 80px;
   left: 50px;
-  color: white;
-  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  color: var(--white);
+ 
+}
+
+.carrusel-text h1{
+  padding-bottom: 2rem;
+ 
+}
+
+.carrusel-text a{
+  background-color: var(--orange);
+  color: var(--black);
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 1rem; 
+  font-size: 1rem;
+}
+
+.carrusel-text a:hover{
+  background-color: var(--white);
+  color: var(--black);
 }
 
 
 
-/* SECIONES DE LA HOME */
+/* SECcIONES DE LA HOME */
 
 #demo{
     color: var(--white);
@@ -382,8 +404,6 @@ main> .parallax-text{
     display: flex;
     justify-content: flex-end;
     padding-right: 2rem;
-
-
 }
 
 .fest-intro .festIntro-right .festIntro-btn a, .fest-page .festIntro-right .festIntro-btn a{
@@ -399,21 +419,20 @@ main> .parallax-text{
 }
 
 .fest-intro .festIntro-right .festIntro-text h2,.fest-page .festIntro-right .festIntro-text h2{
-    font-size: 4rem;
-    
+    font-size: 4rem;  
+    color: var(--blue);
 }
 
 .fest-intro .festIntro-right .festIntro-text p,.fest-page .festIntro-right .festIntro-text p{
     padding-top: var(--mid);
-    text-align: justify;
-    
+    text-align: justify; 
 }
 
 .fest-intro .festIntro-right .festIntro-img img,.fest-page .festIntro-right .festIntro-img img{
     width: 50vw;
 }
 
-/* SECIONES DE LA HOME ARTIST LINE UP*/
+/* SECcIONES DE LA HOME ARTIST LINE UP*/
 .artist-hometitle{
     font-family: var(--maintypo);
     padding-top: 4rem;
@@ -424,7 +443,6 @@ main> .parallax-text{
 
 .artist-homesection{
     margin: var(--mid);
-
 }
 
 .artist-homesection .day-artists h1{
@@ -439,23 +457,17 @@ main> .parallax-text{
     gap: var(--mid);
     width: 100%;
     font-family: var(--maintypo);
-
 }
-
-
 
 .artist-homesection .artist-cardhome img {
     height: 200px;
-
 }
 
 .alu-btn{
     margin: 4rem;
     display: flex;
-    justify-content: center;
-       
+    justify-content: center;      
 }
-
 
 .alu-btn a{
     font-family: var(--maintypo);
@@ -469,15 +481,30 @@ main> .parallax-text{
 .alu-btn a:hover{
     background-color: var(--white);
     color: var(--blue);
-
 }
 
+/* SECCIONES DE LA HOME EXPERIENCIA*/
+.experience {
+    font-family: var(--maintypo);
+    padding: 2rem;
+}
 
-/* SECIONES DE LA HOME NOTICIAS*/
+.experience>div{
+    text-align: center;
+}
 
+.experience>div> h2{
+    font-size: 4rem;    
+}
+
+.experience>div> p {
+    padding-top: 2rem;
+    color: var(--orange);
+}
+
+/* SECCIONES DE LA HOME NOTICIAS*/
 .news, .news-page {
     font-family: var(--maintypo);
-
 }
 
 .news{
@@ -659,6 +686,7 @@ main> .parallax-text{
 
 .info >p{
     text-align: center;
+    color: var(--red);
 }
 
 .info >ul{
@@ -679,6 +707,7 @@ main> .parallax-text{
 }
 
 iframe{
+    padding-top: var(--mid);
     width: 100%;
 }
 
@@ -1047,6 +1076,7 @@ footer .footertopright .iconosrs .iconos-bot .fa-square-x-twitter{
 
 .footer-bot{
     padding-top: var(--mid);
+    padding-bottom: var(--mid);
     display: flex;
     justify-content: space-between;
 }
@@ -1075,12 +1105,10 @@ footer .footerbotleft .footer-links ul li .link01:hover{
 
 footer .footerbotleft .footer-links ul li .link02:hover{
     color: var(--red);
-
 }
 
 footer .footerbotleft .footer-links ul li .link03:hover{
     color: var(--blue);
-
 }
 
 footer .footerbotright{
