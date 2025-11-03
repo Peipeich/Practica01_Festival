@@ -12,8 +12,6 @@ burger.addEventListener("click", function(){
 });
 
 
-
-
 // ABRIR SUBMENUS
 
 // === SUBMENÚS MÓVILES (versión acordeón) ===
@@ -35,8 +33,7 @@ chevrons.forEach((icon) => {
         }
       }
     });
-
-    //  Alterna el menú actual
+        //  Alterna el menú actual
     submenu.classList.toggle("open");
 
     // Cambia el ícono del desplegable
@@ -46,181 +43,117 @@ chevrons.forEach((icon) => {
 });
 
 
-
-
-
-
-
-
-// Carrusel (no mio)
-
+/* CARRUSEL */
+const slides = document.querySelectorAll(".carrusel > div");
+const dots = document.querySelectorAll(".dot"); // puedes no tener dots, se controla
 let currentSlide = 0;
-const slides = document.querySelectorAll(".carrusel > div:not(.carousel-dots)");
-const dots = document.querySelectorAll(".dot");
 
 function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === index);
-  });
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-  currentSlide = index;
+  if (!slides.length) return;
+  currentSlide = (index + slides.length) % slides.length;
+  slides.forEach((slide, i) => slide.classList.toggle("active", i === currentSlide));
+  if (dots.length) dots.forEach((dot, i) => dot.classList.toggle("active", i === currentSlide));
 }
 
-function nextSlide() {
-  let nextIndex = (currentSlide + 1) % slides.length;
-  showSlide(nextIndex);
+if (slides.length) {
+  showSlide(0);
+  setInterval(() => showSlide(currentSlide + 1), 5000);
+} else {
+  console.debug("No hay slides en la página actual.");
 }
 
-function goToSlide(index) {
-  showSlide(index);
-}
+/*  COUNTDOWN  */
+const countdownEl = document.getElementById("demo");
+if (countdownEl) {
+  const countDownDate = new Date("Apr 25, 2026 00:00:00").getTime();
+  const x = setInterval(function () {
+    const now = Date.now();
+    const distance = countDownDate - now;
 
-showSlide(currentSlide);
-setInterval(nextSlide, 3000); // cambia cada 5 segundos
-
-// Carrusel movil
-
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === index);
-  });
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-  currentSlide = index;
-}
-
-function nextSlide() {
-  let nextIndex = (currentSlide + 1) % slides.length;
-  showSlide(nextIndex);
-}
-
-function prevSlide() {
-  let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(prevIndex);
-}
-
-function goToSlide(index) {
-  showSlide(index);
-}
-
-// Inicializa el carrusel
-showSlide(currentSlide);
-let autoSlide = setInterval(nextSlide, 5000);
-
-
-
-// COUNTDOWN
-// Set the date we're counting down to
-var countDownDate = new Date("Apr 25, 2026 00:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
-
-// TICKETS VENTANA MODAL
-let btnopenModal = document.querySelector("#openModal")
-btnopenModal.addEventListener("click", openModalWindow);
-
-
-// Lógica cerrar de la ventana modal
-
-let btncloseModal = document.querySelector(".close")
-let btnacceptModal = document.querySelector("#closeModal")
-
-btncloseModal.addEventListener("click", closeModalWindow);
-btnacceptModal.addEventListener("click", closeModalWindow);
-
-//Función propia para abrir ventana modal
-function openModalWindow(){
-    let modalWindow = document.querySelector("#modalWindow");
-
-    modalWindow.classList.add("show-modal");
-    
-};
-
-//Función propia para cerrar ventana modal
-function closeModalWindow(){
-
-    let modalWindow = document.querySelector("#modalWindow");
-
-    modalWindow.classList.remove("show-modal");
-    
-};
-
-// Cerrar ventana modal cuando se detecta click fuera
-window.addEventListener("click", function(event){
-
-    // llama solo a la función de cerrar modal siempre que el click no sea en la propia ventana modal 
-    let modal = document.querySelector("#modalWindow")
-
-    if (event.target == modal){
-        closeModalWindow();
+    if (distance < 0) {
+      clearInterval(x);
+      countdownEl.textContent = "EXPIRED";
+      return;
     }
 
-})
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }, 1000);
+} else {
+  console.debug("#demo no existe en esta página (countdown no inicializado).");
+}
 
-// TICKETS COMPRA
-document.addEventListener("DOMContentLoaded", function () {
-    const inputs = document.querySelectorAll('input[type="number"]');
-    const totalPriceElement = document.getElementById("totalPrice");
+/*  MODAL VENTANA (tickets)  */
+const openModalBtn = document.querySelector("#openModal");
+const modalWindow = document.querySelector("#modalWindow");
+const closeModalBtn = document.querySelector(".close");
+const acceptModalBtn = document.querySelector("#closeModal");
 
-    // Añade a cada input un evento change para calcular el precio total
-    inputs.forEach((input) => {
-        input.addEventListener("change", calculateTotalPrice);
-    });
+// abrir (si el botón existe)
+if (openModalBtn && typeof openModalBtn.addEventListener === "function") {
+  openModalBtn.addEventListener("click", () => {
+    modalWindow?.classList?.add("show-modal");
+  });
+} else {
+  // no hay botón con id openModal en algunas páginas — no es fatal
+  console.debug("#openModal no encontrado en esta página.");
+}
 
-    // Función para calcular el precio total
-    function calculateTotalPrice() {
-        let totalPrice = 0;
-        inputs.forEach((input) => {
-            const price = parseFloat(input.dataset.price) || 0;
-            const quantity = parseInt(input.value) || 0;
-            totalPrice += price * quantity;
+// cerrar
+if (closeModalBtn) {
+  closeModalBtn.addEventListener("click", () => modalWindow?.classList?.remove("show-modal"));
+}
+if (acceptModalBtn) {
+  acceptModalBtn.addEventListener("click", () => modalWindow?.classList?.remove("show-modal"));
+}
 
-            // Si el precio es mayor que 0, se habilita el botón de comprar
-            if (totalPrice > 0) {
-                document.getElementById("buyTickets").classList.remove("disabled");
-            } else {
-                document.getElementById("buyTickets").classList.add("disabled");
-            }
-        });
-        totalPriceElement.textContent = "¥" + totalPrice.toLocaleString("ja-JP");
-
-    }
-
-    // La primera llamada a la función hará el calculo inicial para poner 0.00 €
-    calculateTotalPrice();
-
-    // Evitar el envio del formulario si el usuario pulsa enter o el precio es 0
-    document.getElementById("form").addEventListener("submit", function (event) {
-        event.preventDefault();
-    });
+// cerrar al click fuera
+window.addEventListener("click", (event) => {
+  if (!modalWindow) return;
+  if (event.target === modalWindow) modalWindow.classList.remove("show-modal");
 });
+
+/*  CÁLCULO TOTAL (modal food menu)  */
+const foodMenuForm = document.querySelector("#buyTicket form");
+const inputs = document.querySelectorAll('#buyTicket input[type="number"]');
+const totalPriceElement = document.getElementById("totalPrice");
+const buyButton = document.getElementById("buyFood");
+
+function updateTotalSafe() {
+  if (!totalPriceElement) return;
+  let total = 0;
+  inputs.forEach((input) => {
+    const price = parseFloat(input.dataset.price) || 0;
+    const qty = parseInt(input.value, 10) || 0;
+    total += price * qty;
+  });
+
+  // Mostrar formato con 2 decimales y símbolo
+  totalPriceElement.textContent = total > 0 ? `¥${total.toFixed(0)}` : "¥0";
+
+  if (buyButton) {
+    if (total > 0) buyButton.classList.remove("disabled");
+    else buyButton.classList.add("disabled");
+  }
+}
+
+if (inputs.length && totalPriceElement) {
+  inputs.forEach((input) => input.addEventListener("input", updateTotalSafe));
+  // inicial
+  updateTotalSafe();
+} else {
+  console.debug("Inputs o totalPriceElement no encontrados para el cálculo del total.");
+}
+
+// prevenir submit (si existe el form)
+if (foodMenuForm) {
+  foodMenuForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert(`ありがとうございます！ Thank you! total: ${totalPriceElement?.textContent ?? "0.00 €"}`);
+  });
+}
+

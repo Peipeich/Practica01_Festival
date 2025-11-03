@@ -896,6 +896,7 @@ iframe{
 
 #modalWindow .modal-content >p {
    padding-top: var(--small);
+   padding-bottom: var(--mid);
 }
 
 #modalWindow .modal-content hr {
@@ -912,72 +913,17 @@ iframe{
 }
 
 /* INTERIOR DEL MODAL WINDOW  */
-/* Styling the form inside #buyTicket */
-#buyTicket form {
-    max-width: 728px;
-    min-height: fit-content;
-    padding: 2rem;
+.total-price-cont{
     display: flex;
-    flex-direction: column;
-}
-
-#buyTicket form div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: var(--input-margin);
-    gap: 2rem;
-}
-
-#buyTicket form label {
-    font-size: 1.4rem;
-    width: 80%;
-    min-width: 5rem;
-    margin: var(--input-margin);
-    color: var(--primary-color);
-}
-
-#buyTicket form input[type="number"] {
-    font-size: 1.4rem;
-    width: 20%;
-    min-width: 3rem;
-    color: var(--primary-color);
-    padding: var(--input-padding);
-    margin: var(--input-margin);
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-}
-
-#buyTicket form input[type="number"]:focus {
-    outline: none;
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
-    box-shadow: 0 0 5px var(--secondary-color);
-}
-
-#buyTicket form .total-price-cont {
-    font-size: 1.6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem 0 0 0;
-}
-
-#buyTicket form #buyFood.disabled {
-    background-color: #ccc;
-    color: #666;
-    cursor: not-allowed;
-}
-
-#buyTicket form .total-price-cont p {
-    color: var(--black);
-    padding-bottom: var(--small);
+    justify-content: space-around;
+    padding: var(--mid);
 }
 
 #buyTicket form input[type="submit"] {
+    font-family: var(--maintypo);
     padding: var(--small);
     background-color: var(--black);
-    color: var(--orange);
+    color: var(--white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -988,9 +934,13 @@ iframe{
 }
 
 #buyTicket form input[type="submit"]:hover {
-    background-color: white;
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
+    background-color:var(--orange);
+    color: var(--black);
+ 
+}
+
+#totalPrice{
+    color: var(--red);
 }
 
 /* MARQUESINA  */
