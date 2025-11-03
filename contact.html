@@ -25,7 +25,7 @@
                 </div>
                 <div class="menu-cart">
                     <!-- <a href="#">EN</a> -->
-                    <p><i class="fa-solid fa-cart-shopping"></i></p>
+                    <p  class="openModal"><i class="fa-solid fa-cart-shopping"></i></p>
                 </div>
             </div>
         </div>
@@ -114,6 +114,69 @@
         </div>      
     </nav>
 
+     <div id="modalWindow">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>BUY YOUR TICKETS NOW!</h2>
+            <hr>
+            <p>
+                Please note that no refunds will be given. Accommodation and transport are not covered.
+            </p>
+            <div id="modalwindow-content">
+            <div id="buyTicket">
+               <form id="form" action="">
+                    <div>
+                        <label for="day25">DAY 25 - ¥15,000</label>
+                        <input
+                            type="number"
+                            name="day25"
+                            id="day25"
+                            min="0"
+                            value="0"
+                            data-price="15000" />
+                    </div>
+                    <div>
+                        <label for="day26">DAY 26 - ¥15,000</label>
+                        <input
+                            type="number"
+                            name="day26"
+                            id="day26"
+                            min="0"
+                            value="0"
+                            data-price="15000" />
+                    </div>
+                    <div>
+                        <label for="bothdays">BOTH DAYS - ¥21,500</label>
+                        <input
+                            type="number"
+                            name="bothdays"
+                            id="bothdays"
+                            min="0"
+                            value="0"
+                            data-price="21500" />
+                    </div>
+                    <div>
+                        <label for="vip">VIP - ¥44,500</label>
+                        <input
+                            type="number"
+                            name="vip"
+                            id="vip"
+                            min="0"
+                            value="0"
+                            data-price="44500" />
+                    </div>
+                   
+                    <div class="total-price-cont">
+                        <p>Total price:</p>
+                        <p id="totalPrice"></p>
+                    </div>
+                    <input id="buyTickets" type="submit" value="Buy Tickets" class="disabled" />
+                </form>
+            </div>
+        </div>
+            
+        </div>
+    </div>
      <footer>
         <div class="footer-top">
             <div class="newsletter">

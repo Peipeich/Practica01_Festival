@@ -87,38 +87,57 @@ if (countdownEl) {
   console.debug("#demo no existe en esta página (countdown no inicializado).");
 }
 
-/*  MODAL VENTANA (tickets)  */
-const openModalBtn = document.querySelector("#openModal");
-const modalWindow = document.querySelector("#modalWindow");
-const closeModalBtn = document.querySelector(".close");
-const acceptModalBtn = document.querySelector("#closeModal");
+// Lógica abrir de la ventana modal
 
-// abrir (si el botón existe)
-if (openModalBtn && typeof openModalBtn.addEventListener === "function") {
-  openModalBtn.addEventListener("click", () => {
-    modalWindow?.classList?.add("show-modal");
+// Selecciona todos los elementos con clase .openModal
+const btnsOpenModal = document.querySelectorAll(".openModal");
+
+// Añade el evento a cada uno
+btnsOpenModal.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    event.preventDefault(); // Evita que salte el enlace #
+    openModalWindow();
   });
-} else {
-  // no hay botón con id openModal en algunas páginas — no es fatal
-  console.debug("#openModal no encontrado en esta página.");
-}
-
-// cerrar
-if (closeModalBtn) {
-  closeModalBtn.addEventListener("click", () => modalWindow?.classList?.remove("show-modal"));
-}
-if (acceptModalBtn) {
-  acceptModalBtn.addEventListener("click", () => modalWindow?.classList?.remove("show-modal"));
-}
-
-// cerrar al click fuera
-window.addEventListener("click", (event) => {
-  if (!modalWindow) return;
-  if (event.target === modalWindow) modalWindow.classList.remove("show-modal");
 });
 
+
+// Lógica cerrar de la ventana modal
+
+let btncloseModal = document.querySelector(".close")
+
+btncloseModal.addEventListener("click", closeModalWindow);
+
+//Función propia para abrir ventana modal
+function openModalWindow(){
+    let modalWindow = document.querySelector("#modalWindow");
+
+    modalWindow.classList.add("show-modal");
+    
+};
+
+//Función propia para cerrar ventana modal
+function closeModalWindow(){
+
+    let modalWindow = document.querySelector("#modalWindow");
+
+    modalWindow.classList.remove("show-modal");
+    
+};
+
+// Cerrar ventana modal cuando se detecta click fuera
+window.addEventListener("click", function(event){
+
+    // llama solo a la función de cerrar modal siempre que el click no sea en la propia ventana modal 
+    let modal = document.querySelector("#modalWindow")
+
+    if (event.target == modal){
+        closeModalWindow();
+    }
+
+})
+
 /*  CÁLCULO TOTAL (modal food menu)  */
-const foodMenuForm = document.querySelector("#buyTicket form");
+const ticketMenuForm = document.querySelector("#buyTicket form");
 const inputs = document.querySelectorAll('#buyTicket input[type="number"]');
 const totalPriceElement = document.getElementById("totalPrice");
 const buyButton = document.getElementById("buyFood");
@@ -150,8 +169,8 @@ if (inputs.length && totalPriceElement) {
 }
 
 // prevenir submit (si existe el form)
-if (foodMenuForm) {
-  foodMenuForm.addEventListener("submit", (e) => {
+if (ticketMenuForm) {
+  ticketMenuForm.addEventListener("submit", (e) => {
     e.preventDefault();
     alert(`ありがとうございます！ Thank you! total: ${totalPriceElement?.textContent ?? "0.00 €"}`);
   });

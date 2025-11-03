@@ -25,7 +25,7 @@
                 </div>
                 <div class="menu-cart">
                     <!-- <a href="#">EN</a> -->
-                    <p><i class="fa-solid fa-cart-shopping"></i></p>
+                    <p  class="openModal"><i class="fa-solid fa-cart-shopping"></i></p>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
         </div>      
     </nav>
 
-     <section class="fest-intro">
+     <section class="fest-page">
         <div class="festIntro-right">
             <div class="festIntro-text">
                 <h2>日本音楽FEST</h2>
@@ -138,6 +138,70 @@
             <p>Immerse yourself in the vibrant atmosphere of Nippon Ongaku Fest — where music, culture, and nature come together in perfect harmony. Feel the energy of live performances by top Japanese artists, surrounded by the stunning mountain scenery of Yuzawa. Explore food stalls offering local Niigata delicacies, enjoy interactive workshops, and connect with fans who share your passion for Japanese music and culture. From sunrise beats to night performances under the stars, every moment at the festival is a celebration of creativity, joy, and connection.</p>
         </div>
     </section>
+
+     <div id="modalWindow">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>BUY YOUR TICKETS NOW!</h2>
+            <hr>
+            <p>
+                Please note that no refunds will be given. Accommodation and transport are not covered.
+            </p>
+            <div id="modalwindow-content">
+            <div id="buyTicket">
+               <form id="form" action="">
+                    <div>
+                        <label for="day25">DAY 25 - ¥15,000</label>
+                        <input
+                            type="number"
+                            name="day25"
+                            id="day25"
+                            min="0"
+                            value="0"
+                            data-price="15000" />
+                    </div>
+                    <div>
+                        <label for="day26">DAY 26 - ¥15,000</label>
+                        <input
+                            type="number"
+                            name="day26"
+                            id="day26"
+                            min="0"
+                            value="0"
+                            data-price="15000" />
+                    </div>
+                    <div>
+                        <label for="bothdays">BOTH DAYS - ¥21,500</label>
+                        <input
+                            type="number"
+                            name="bothdays"
+                            id="bothdays"
+                            min="0"
+                            value="0"
+                            data-price="21500" />
+                    </div>
+                    <div>
+                        <label for="vip">VIP - ¥44,500</label>
+                        <input
+                            type="number"
+                            name="vip"
+                            id="vip"
+                            min="0"
+                            value="0"
+                            data-price="44500" />
+                    </div>
+                   
+                    <div class="total-price-cont">
+                        <p>Total price:</p>
+                        <p id="totalPrice"></p>
+                    </div>
+                    <input id="buyTickets" type="submit" value="Buy Tickets" class="disabled" />
+                </form>
+            </div>
+        </div>
+            
+        </div>
+    </div>
 
      <footer>
         <div class="footer-top">
