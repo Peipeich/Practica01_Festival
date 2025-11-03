@@ -87,8 +87,49 @@ if (countdownEl) {
   console.debug("#demo no existe en esta página (countdown no inicializado).");
 }
 
-// Lógica abrir de la ventana modal
+// SONIDO ARTIST LINE-UP 
 
+let muteBtn = document.querySelector(".volume > i")
+let volumeActive = document.querySelector(".background-video  video")
+
+console.log(volumeActive);
+
+muteBtn.addEventListener("click", function(){
+    muteBtn.classList.toggle("fa-volume-xmark");
+    muteBtn.classList.toggle("fa-volume-low");
+    
+
+    // Si estaba silenciado → subir volumen con fade-in hasta 0.6
+  if (volumeActive.muted) {
+    volumeActive.muted = false;
+    let volume = 0;
+    volumeActive.volume = volume;
+    const fadeIn = setInterval(() => {
+      if (volume < 0.2) {
+        volume += 0.05;
+        volumeActive.volume = volume;
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 50);
+  } 
+  // Si tiene sonido → aplicar fade-out y luego mutear
+  else {
+    let volume = volumeActive.volume;
+    const fadeOut = setInterval(() => {
+      if (volume > 0) {
+        volume -= 0.05;
+        volumeActive.volume = Math.max(volume, 0);
+      } else {
+        clearInterval(fadeOut);
+        volumeActive.muted = true;
+      }
+    }, 50);
+  }
+});
+  
+
+// Lógica abrir de la ventana modal
 // Selecciona todos los elementos con clase .openModal
 const btnsOpenModal = document.querySelectorAll(".openModal");
 
@@ -136,7 +177,7 @@ window.addEventListener("click", function(event){
 
 })
 
-/*  CÁLCULO TOTAL (modal food menu)  */
+/*  CÁLCULO TOTAL   */
 const ticketMenuForm = document.querySelector("#buyTicket form");
 const inputs = document.querySelectorAll('#buyTicket input[type="number"]');
 const totalPriceElement = document.getElementById("totalPrice");

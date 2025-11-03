@@ -3,34 +3,20 @@
     src: url(/media/typography/PPMonumentWide-Black.otf)
 }
 
-@font-face {
-    font-family: MonumentWideL;
-    src: url(/media/typography/PPMonumentWide-Light.otf)
-}
-
-@font-face {
-  font-family: Boska-Medium;
-  src: url('/media/typography/Fonts/OTF/Boska-Medium.otf');
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-
 :root{
-    --navtypo:MonumentWideB;
     --maintypo: MonumentWideB;
-    --sectypo: Boska-Medium;
     --kanjitypo: "Yusei Magic", sans-serif;
     --black:rgba(3, 8, 18, 1);
     --blue:rgba(21, 80, 167, 1);
     --orange:rgba(255, 158, 39, 1);
     --red:rgba(244, 32, 74, 1);
     --white:rgba(241, 241, 249, 1);
+    --xsmall:0.7rem;
     --small:1rem;
     --mid:2rem;
     --large:3rem;
+    --extra:4rem
 }
-
 
 *{
     margin: 0;
@@ -45,8 +31,7 @@ body{
     background-color: var(--black);
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    
+    overflow-x: hidden;   
 }
 
 img{
@@ -62,6 +47,29 @@ video{
     vertical-align: middle;
     object-fit: cover;
 }
+
+
+::placeholder{
+    font-family: var(--maintypo);
+    text-align: center;
+}
+
+.fa-youtube{
+    color: var(--red);
+}
+
+.fa-square-instagram{
+    color: var(--orange);
+}
+
+.fa-tiktok{
+    color: var(--blue);
+}
+
+.fa-square-x-twitter{
+    color: var(--white);
+}
+
 
 /* MENÚ */
 nav{
@@ -89,7 +97,7 @@ nav> .nav-top .menu-search{
 nav> .nav-top .menu-icon-r{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--small);
 
 }
 
@@ -104,7 +112,7 @@ nav> .nav-top .menu-icon-r .menu-bars, nav> .nav-top .menu-icon-r .menu-cart{
 
 nav> .nav-top .menu-icon-r > a{
     font-family: var(--maintypo);
-    font-size: 0.7rem;
+    font-size: var(--xsmall);
     color: var(--white);
 }
 
@@ -115,7 +123,7 @@ nav> .nav-top .menu-search:hover{
 nav> .nav-top .menu-icon-r{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--small);
 }
 
 nav> .nav-top .menu-icon-r > a:hover{
@@ -162,8 +170,8 @@ nav> .nav-bot> ul{
 
 nav> .nav-bot> ul> li a{
     text-decoration: none;
-    font-family: var(--navtypo);
-    font-size: 0.7rem;
+    font-family: var(--maintypo);
+    font-size: var(--xsmall);
     color: var(--white);
     
 }
@@ -243,10 +251,10 @@ nav ul li ul li a:hover {
 /* MENU FUERA DEL DESPLEGABLE */
 
 nav> .nav-bot> ul> .button-ticket> a{
-    font-family: var(--navtypo);
+    font-family: var(--maintypo);
     background-color: var(--orange);
-    border-radius: 1rem;
-    padding: 0.7rem;
+    border-radius: var(--small);
+    padding: var(--xsmall);
     color: var(--black);
 
 }
@@ -336,17 +344,17 @@ main> .parallax-text{
 }
 
 .carrusel-text h1{
-  padding-bottom: 2rem;
+  padding-bottom: var(--mid);
  
 }
 
 .carrusel-text a{
   background-color: var(--orange);
   color: var(--black);
-  padding: 1rem;
+  padding: var(--small);
   text-decoration: none;
-  border-radius: 1rem; 
-  font-size: 1rem;
+  border-radius: var(--small); 
+  font-size: var(--small);
 }
 
 .carrusel-text a:hover{
@@ -380,11 +388,11 @@ main> .parallax-text{
 }
 
 .fest-intro {
-    margin: 1rem;
+    margin: var(--small);
 }
 
 .fest-page{
-    padding: 20vh 2rem 2rem 2rem;;
+    padding: 20vh var(--mid) var(--mid) var(--mid);;
 
 }
 
@@ -396,19 +404,19 @@ main> .parallax-text{
 
 .fest-intro .festIntro-right .festIntro-text, .fest-page .festIntro-right .festIntro-text{
     width: 50vw ;
-    padding-right: 2rem;
+    padding-right: var(--mid);
 }
 
 
 .fest-intro .festIntro-right .festIntro-btn, .fest-page .festIntro-right .festIntro-btn {
     display: flex;
     justify-content: flex-end;
-    padding-right: 2rem;
+    padding-right: var(--mid);
 }
 
 .fest-intro .festIntro-right .festIntro-btn a, .fest-page .festIntro-right .festIntro-btn a{
-    padding: 1rem 3rem 1rem 3rem;
-    border-radius: 1rem;
+    padding: var(--small) var(--large) var(--small) var(--large);
+    border-radius: var(--small);
     background-color: var(--orange);
     color: var(--black);
     text-decoration: none;
@@ -419,7 +427,7 @@ main> .parallax-text{
 }
 
 .fest-intro .festIntro-right .festIntro-text h2,.fest-page .festIntro-right .festIntro-text h2{
-    font-size: 4rem;  
+    font-size: var(--extra);  
     color: var(--blue);
 }
 
@@ -435,10 +443,10 @@ main> .parallax-text{
 /* SECcIONES DE LA HOME ARTIST LINE UP*/
 .artist-hometitle{
     font-family: var(--maintypo);
-    padding-top: 4rem;
+    padding-top: var(--extra);
     text-align: center;
     color: var(--white);
-    font-size: 4rem;
+    font-size: var(--extra);
 }
 
 .artist-homesection{
@@ -446,8 +454,9 @@ main> .parallax-text{
 }
 
 .artist-homesection .day-artists h1{
-     padding-top: var(--mid);
+    padding-top: var(--mid);
     font-family: var(--maintypo);
+    text-align: center;
 }
 
 .artist-homesection .artist-cardhome {
@@ -464,15 +473,15 @@ main> .parallax-text{
 }
 
 .alu-btn{
-    margin: 4rem;
+    margin: var(--extra);
     display: flex;
     justify-content: center;      
 }
 
 .alu-btn a{
     font-family: var(--maintypo);
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: var(--small);
+    border-radius: var(--small);
     background-color: var(--blue);
     color: var(--white);
     text-decoration: none;
@@ -486,7 +495,7 @@ main> .parallax-text{
 /* SECCIONES DE LA HOME EXPERIENCIA*/
 .experience {
     font-family: var(--maintypo);
-    padding: 2rem;
+    padding: var(--mid);
 }
 
 .experience>div{
@@ -494,11 +503,11 @@ main> .parallax-text{
 }
 
 .experience>div> h2{
-    font-size: 4rem;    
+    font-size: var(--extra);    
 }
 
 .experience>div> p {
-    padding-top: 2rem;
+    padding-top: var(--mid);
     color: var(--orange);
 }
 
@@ -508,17 +517,17 @@ main> .parallax-text{
 }
 
 .news{
-    padding: 2rem;
+    padding: var(--mid);
 
 }
 
 .news-page {
-    padding: 20vh 2rem 2rem 2rem;
+    padding: 20vh var(--mid) var(--mid) var(--mid);
 }
 
 .news> .new-title h2, .news-page> .new-title h2 {
     text-align: center;
-    font-size: 4rem;
+    font-size: var(--extra);
 }
 
 .news .noticias-fila, .news-page .noticias-fila  {
@@ -539,8 +548,8 @@ main> .parallax-text{
 
 .news .tarjeta-noticias .tn-btn a, .news-page .tarjeta-noticias .tn-btn a{
     font-family: var(--maintypo);
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: var(--small);
+    border-radius: var(--small);
     background-color: var(--blue);
     color: var(--white);
     text-decoration: none;
@@ -560,26 +569,36 @@ main> .parallax-text{
 }
 
 /* ARTIST LINE-UP */
+
+/* Volumen */
+.volume{
+    position: fixed;
+    z-index: 9998;
+    bottom: 5vh;
+    right: 3vw;
+    color: var(--white);
+    font-size: 2rem;
+}
+
 .scroll-down {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     top:80vh;
-    left: 45%;
+    left:45%;
     color: var(--white);
-
 }
 
 .scroll-down p{
     font-family: var(--maintypo); 
-    font-size: 1rem;
+    font-size: var(--small);
     
 }
 
 .scroll-down i{
-    padding-top: 1rem;
-    font-size: 4rem;
+    padding-top: var(--small);
+    font-size: var(--extra);
     
 }
 
@@ -587,7 +606,7 @@ main> .parallax-text{
     margin-top: 100vh;
     font-family: var(--maintypo); 
     color: var(--white);
-    font-size: 4rem;
+    font-size: var(--extra);
     text-align: center;
 }
 
@@ -596,7 +615,7 @@ main> .parallax-text{
     flex-direction: column;
     width: 100%;
     color: var(--white);
-    padding: 4rem;
+    padding: var(--extra);
 }
 
 .day-artists{
@@ -636,6 +655,8 @@ main> .parallax-text{
   width: 100%;
   height: 100%;
   color: var(--white);
+  background: #000000;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.58) 23%, rgba(255, 255, 255, 0.38) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -643,7 +664,7 @@ main> .parallax-text{
   opacity: 0;
   transition: opacity 0.5s ease;
   text-align: center;
-  padding: 1rem;
+  padding: var(--small);
   font-family: var(--maintypo);
 }
 
@@ -681,7 +702,7 @@ main> .parallax-text{
 
 .info >h2{
     text-align: center;
-    font-size: 4rem;
+    font-size: var(--extra);
 }
 
 .info >p{
@@ -690,26 +711,79 @@ main> .parallax-text{
 }
 
 .info >ul{
-    padding-top: 2rem;
+    padding-top: var(--mid);
     display:grid;
     grid-template-columns: auto auto auto;
-    gap: 2rem;
+    gap: var(--mid);
 }
 
 .info >ul li {
-   list-style: none;
-    
+   list-style: none;   
 }
 
 .info >ul li p{
-    text-align: justify;
-    
+    text-align: justify; 
 }
 
 iframe{
     padding-top: var(--mid);
     width: 100%;
 }
+
+/* CONTACT */
+#contact{
+    padding: 23vh var(--mid) var(--small) var(--mid);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--maintypo);
+    color: var(--white);
+}
+
+.contact-info{
+    padding: var(--small);
+    border: 0.1rem var(--white) solid;
+}
+
+legend{
+    font-size: var(--extra);
+    text-align: center;
+}
+
+.name input, .e-mail input,.comment input, .comment textarea{
+    width: 50%;
+    border-radius:var(--small) ;
+}
+
+.name label{
+    padding-top: var(--small);
+    color: var(--orange);
+}
+
+.e-mail label{
+    color: var(--red);
+}
+
+.comment label{
+    color: var(--blue);
+}
+
+textarea{
+    font-family: var(--maintypo);
+    text-align: center;
+}
+
+.name, .e-mail,.comment,.comment, #comment{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-bottom: var(--mid)
+}
+
+.notformulario{
+    text-align: center;
+}
+
 
 /* ENTRADAS */
 #tickets{
@@ -719,7 +793,7 @@ iframe{
 }
 
 #tickets h1{
-    font-size: 4rem;
+    font-size: var(--extra);
     text-align: center;
 }
 
@@ -736,15 +810,13 @@ iframe{
 }
 
 .tarjetas-pago p {
-    padding-top: var(--mid);
-    
+    padding-top: var(--mid);   
 }
 
 .tarjetas-pago .price{
     font-size: 1.5rem;    
-    padding-top: 4rem;
-    text-decoration: none;
-    
+    padding-top: var(--extra);
+    text-decoration: none;   
 }
 
 .tarjetas-pago .price a{
@@ -790,25 +862,21 @@ iframe{
 .ticket02 > .price a,
 .ticket03 > .price a,
 .ticket04 > .price a {
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: var(--small);
+    border-radius: var(--small);
     display: flex;
     justify-content: center;
     background-color: var(--black);
     text-decoration: none;
-     border: 0.1rem solid var(--black); 
-
-   
+     border: 0.1rem solid var(--black);  
 }
 
 .ticket01 > .price a{
-    color: var(--orange);
-    
+    color: var(--orange);  
 }
 
 .ticket02 > .price a{
-    color: var(--red);
-    
+    color: var(--red);   
 }
 
 .ticket03 > .price a{
@@ -817,7 +885,6 @@ iframe{
 }
 
 .ticket04 > .price a{
-   
     color: var(--white);
 }
     
@@ -882,11 +949,10 @@ iframe{
     justify-content: center;
     align-items: center;
     text-align: center;
-    
 }
 
 #modalWindow .modal-content h2 {
-    font-size: 2rem;
+    font-size: var(--mid);
 }
 
 #modalWindow .modal-content >p {
@@ -900,7 +966,7 @@ iframe{
 
 #modalWindow .modal-content .close {
     color: var(--black);
-    font-size: 2rem;
+    font-size: var(--mid);
     font-weight: bold;
     align-self: flex-end;
     cursor: pointer;
@@ -953,8 +1019,8 @@ iframe{
     animation: mover-marquesina 10s linear infinite ;
     color: var(--orange);
     font-family: var(--sectypo);
-    font-size: 4rem;
-    letter-spacing: 1rem;
+    font-size: var(--extra);
+    letter-spacing: var(--small);
      margin-right: 5rem;
 }
 
@@ -970,10 +1036,10 @@ iframe{
 
 /* FOOTER */
 footer{
-    padding: 1rem;
+    padding: var(--small);
     background-color: var(--black);
     color: var(--white);
-    font-family: var(--navtypo);
+    font-family: var(--maintypo);
 }
 
 
@@ -999,6 +1065,10 @@ footer .footer-top .newsletter input{
     font-family: var(--maintypo);
 }
 
+.newslettertype input::placeholder{
+    color: var(--red);
+}
+
 footer .footer-top .newsletter button{
     padding: 0.5rem;
     padding-left: 3.5rem;
@@ -1019,7 +1089,7 @@ footer .footertopright{
 }
 
 footer .footertopright .footer-contact{
-    font-size: 0.7rem;
+    font-size: var(--xsmall);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1030,14 +1100,14 @@ footer .footertopright .footer-contact{
 
 footer .footertopright .footer-contact p{
 
-    padding: 1rem;
+    padding: var(--small);
 }
 
 footer .footertopright .iconosrs{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 4rem;
+    font-size: var(--extra);
 }
 
 footer .footertopright .iconosrs .iconos-top, footer .footertopright .iconosrs .iconos-bot{
@@ -1047,7 +1117,7 @@ footer .footertopright .iconosrs .iconos-top, footer .footertopright .iconosrs .
 }
 
 footer .footertopright .iconosrs .iconos-top{
-     gap: 1rem;
+     gap: var(--small);
 }
 
 footer .footertopright .iconosrs .iconos-bot{
@@ -1055,23 +1125,9 @@ footer .footertopright .iconosrs .iconos-bot{
 
 }
 
-footer .footertopright .iconosrs .iconos-top .fa-youtube{
-    color: var(--red);
-}
-
-footer .footertopright .iconosrs .iconos-top .fa-square-instagram{
-    color: var(--orange);
-}
-
 footer .footertopright .iconosrs .iconos-bot .fa-tiktok{
-    font-size: 3rem;
-    padding-left: 1rem;
-    color: var(--blue);
-}
-
-footer .footertopright .iconosrs .iconos-bot .fa-square-x-twitter{
-    color: var(--white);
-
+    font-size: var(--large);
+    padding-left: var(--small);
 }
 
 .footer-bot{
@@ -1083,7 +1139,7 @@ footer .footertopright .iconosrs .iconos-bot .fa-square-x-twitter{
 
 footer .footerbotleft{
     display: flex;
-    gap: 3rem;
+    gap: var(--large);
 }
 
 footer .footerbotleft .footer-links ul li {
@@ -1094,7 +1150,7 @@ footer .footerbotleft .footer-links ul li {
 footer .footerbotleft .footer-links ul li a{
     text-decoration: none;
     color: var(--white);
-    font-size: 0.7rem;
+    font-size: var(--xsmall);
 
 }
 
@@ -1113,17 +1169,16 @@ footer .footerbotleft .footer-links ul li .link03:hover{
 
 footer .footerbotright{
     display: flex;
+    align-items: flex-end;
 }
 
 footer .footerbotright .copyright{
-    font-size: 0.7rem;
+    font-size: var(--xsmall);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
-    padding-right: var(--mid);
-    padding-bottom: 1.5rem ;
-    
+    padding-right: var(--mid);    
 }
 
 /* Media querys */
@@ -1154,13 +1209,11 @@ nav> .nav-top .menu-icon-r .menu-bars:hover{
 
 /* IMAGEN DEL NAV */
 nav> .nav-top>a{
-    padding-left: 4rem;
+    padding-left: var(--extra);
 
 } 
 
 /* MENU DESPLEGABLE */
-
-
 nav> .nav-bot900{
     display: none;
 }
@@ -1185,13 +1238,13 @@ nav> .nav-bot900 ul .desple-top div {
     display: flex;
     justify-content: center; 
     align-items: center;
-    gap: 1rem; 
+    gap: var(--small); 
 }
 
 
 nav> .nav-bot900> ul .desple-top a, nav> .nav-bot900> ul .desple-top p {
     color: var(--white);
-    font-family: var(--navtypo);
+    font-family: var(--maintypo);
     font-size: var(--mid);
     text-decoration: none;   
 }
@@ -1199,11 +1252,11 @@ nav> .nav-bot900> ul .desple-top a, nav> .nav-bot900> ul .desple-top p {
 nav> .nav-bot900> ul .button-ticket a{
     display: flex;
     justify-content: center; 
-    border-radius: 1rem;
-    padding: 1rem;
+    border-radius: var(--small);
+    padding: var(--small);
     background-color: var(--orange);
     color: var(--black);
-    font-family: var(--navtypo);
+    font-family: var(--maintypo);
     font-size: var(--mid);
     text-decoration: none;
 }
@@ -1239,7 +1292,7 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 }
 
 .fest-intro .festIntro-right, .fest-page .festIntro-right {
-    padding-left: 2rem;
+    padding-left: var(--mid);
 }
 
 
@@ -1249,7 +1302,7 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 }
 
 .fest-intro .festIntro-right .festIntro-btn , .fest-page .festIntro-right .festIntro-btn {
-    padding-bottom: 2rem;
+    padding-bottom: var(--mid);
    
 }
 
@@ -1264,7 +1317,7 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 /* SECIONES DE LA HOME INFO*/ 
 
 .info >ul{
-    padding-bottom: 2rem;
+    padding-bottom: var(--mid);
     
 }
 
@@ -1299,7 +1352,7 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
     }
 
     footer .footertopright{
-    padding-top: 1rem;
+    padding-top: var(--small);
     display: flex;
     justify-content: space-between;
     }
@@ -1328,9 +1381,9 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
     }
 
     footer .footerbotright .copyright{
-    padding-top: 3rem;
+    padding-top: var(--large);
     text-align: left;
-    font-size: 1rem;
+    font-size: var(--small);
         
     }
 
@@ -1342,19 +1395,42 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 
     }
 
-
 }
 
 @media (max-width: 600px) {
+    #demo{
+        padding-top: var(--mid);
+        font-size: var(--mid);
+    }
+
+    /* SECIONES DE LA HOME INTRO*/
+    .festIntro-text p{
+        padding: var(--small);
+        font-size: 0.8rem;
+    }
+
     /* SECIONES DE LA HOME ARTIST LINE UP*/
     .artist-homesection .artist-cardhome {
     grid-template-columns:  auto;
     
     }
 
+    /* SECIONES DE LA HOME EXP*/
+    .experience>div h2{
+        font-size: var(--mid);
+    }
 
- /* ARTIST LINE-UP */
+     /* ARTIST LINE-UP */
     .artist-section .artist-bot{
      grid-template-columns: auto;
+    }
+
+    /* FOOTER */
+    footer .footer-top .newsletter button{
+    padding-left: var(--small);
+    padding-right: var(--small);
+    
 }
+
+
 }
