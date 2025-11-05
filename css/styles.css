@@ -586,7 +586,7 @@ main> .parallax-text{
     align-items: center;
     position: absolute;
     top:80vh;
-    left:45%;
+    left:46vw;
     color: var(--white);
 }
 
@@ -627,8 +627,6 @@ main> .parallax-text{
      position: relative;
      overflow: hidden;
 }
-
-
 
 .artist-section > .artist-card .artist-pics img,.artist-bot > .artist-card .artist-pics img{
     width: 100%;
@@ -917,7 +915,7 @@ textarea{
 #modalWindow {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100vw;
@@ -942,7 +940,7 @@ textarea{
     font-family: var(--maintypo);
     margin: 15% auto;
     padding: var(--mid);
-    max-width: 564px;
+    max-width: 700px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -980,6 +978,11 @@ textarea{
     padding: var(--mid);
 }
 
+#buyTicket form div{
+    display: flex;
+    flex-direction: column;
+}
+
 #buyTicket form input[type="submit"] {
     font-family: var(--maintypo);
     padding: var(--small);
@@ -997,8 +1000,14 @@ textarea{
 #buyTicket form input[type="submit"]:hover {
     background-color:var(--orange);
     color: var(--black);
- 
 }
+
+#buyTicket form input[data-price="15000"],#buyTicket form input[data-price="21500"],#buyTicket form input[data-price="44500"]{
+    text-align: center;
+    font-family: var(--maintypo);
+}
+
+
 
 #totalPrice{
     color: var(--red);
