@@ -616,6 +616,8 @@ main> .parallax-text{
     width: 100%;
     color: var(--white);
     padding: var(--extra);
+    font-family: var(--maintypo);
+    text-align: center;
 }
 
 .day-artists{
@@ -693,7 +695,7 @@ main> .parallax-text{
 
 /* INFORMATION */
 .info{
-    padding-top: 30vh;
+    padding: 30vh var(--mid) var(--mid) var(--mid);
     font-family: var(--maintypo);
     color: var(--white);
 }
@@ -705,7 +707,7 @@ main> .parallax-text{
 
 .info >p{
     text-align: center;
-    color: var(--red);
+    color: var(--orange);
 }
 
 .info >ul{
@@ -721,6 +723,20 @@ main> .parallax-text{
 
 .info >ul li p{
     text-align: justify; 
+}
+
+.info >ul .train span{
+     color: var(--orange);
+}
+
+.info >ul .bus span{
+    color: var(--red);
+     
+}
+
+.info >ul .car span{
+    color: var(--blue);
+     
 }
 
 iframe{
@@ -1014,33 +1030,57 @@ textarea{
 }
 
 /* MARQUESINA  */
+.marquesina, .marquesina-index, .marquesina-artist  {
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    /* ... */
+    > * {
+      flex: 0 0 100%;
+    }
 
-.marquesina{
-  width: 100%; 
-  overflow: hidden;
-  box-sizing: border-box; 
-  white-space: nowrap;
-  padding-left: 100%;
+     &:hover .group {
+      animation-play-state: paused;
+  }
+} 
+
+.marquesina .group, .marquesina-index .group, .marquesina-artist .group{
+    display: flex;
+    gap: var(--mid);
+    padding-right: 20px;
+    display: inline-flex;
+    will-change: transform; 
+    animation: scrolling 20s linear infinite;
+
 }
 
-.marquesina>p{
-    display: inline-block;
-    animation: mover-marquesina 10s linear infinite ;
-    color: var(--orange);
-    font-family: var(--sectypo);
+.marquesina .group .card,.marquesina-index .group .card, .marquesina-artist .group .card {
+    flex: 0 0 auto;
+    font-family: var(--maintypo);
     font-size: var(--extra);
-    letter-spacing: var(--small);
-     margin-right: 5rem;
+    margin-right: 5rem;
+    white-space: nowrap;
 }
 
-@keyframes mover-marquesina {
-  0% {
-    transform: translateX(0%); 
-  }
-  100% {
-    transform: translateX(-100%); 
-  }
-  
+.marquesina .group .card {
+    color: var(--white);
+}
+
+.marquesina-index .group .card, .marquesina-artist .group .card {
+    color: var(--orange);
+}
+
+
+@keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
 }
 
 /* FOOTER */

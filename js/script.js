@@ -88,42 +88,47 @@ if (countdownEl) {
 }
 
 // SONIDO ARTIST LINE-UP 
+// SONIDO ARTIST LINE-UP 
+const muteBtn = document.querySelector(".volume > i");
+const volumeActive = document.querySelector(".background-video video");
 
-// let muteBtn = document.querySelector(".volume > i")
-// let volumeActive = document.querySelector(".background-video  video")
-
-// muteBtn.addEventListener("click", function(){
-//     muteBtn.classList.toggle("fa-volume-xmark");
-//     muteBtn.classList.toggle("fa-volume-low");
+if (muteBtn && volumeActive) {
+  muteBtn.addEventListener("click", function(){
+    muteBtn.classList.toggle("fa-volume-xmark");
+    muteBtn.classList.toggle("fa-volume-low");
     
-//     // Si estaba silenciado → subir volumen con fade-in hasta 0.6
-//   if (volumeActive.muted) {
-//     volumeActive.muted = false;
-//     let volume = 0;
-//     volumeActive.volume = volume;
-//     const fadeIn = setInterval(() => {
-//       if (volume < 0.2) {
-//         volume += 0.05;
-//         volumeActive.volume = volume;
-//       } else {
-//         clearInterval(fadeIn);
-//       }
-//     }, 50);
-//   } 
-//   // Si tiene sonido → aplicar fade-out y luego mutear
-//   else {
-//     let volume = volumeActive.volume;
-//     const fadeOut = setInterval(() => {
-//       if (volume > 0) {
-//         volume -= 0.05;
-//         volumeActive.volume = Math.max(volume, 0);
-//       } else {
-//         clearInterval(fadeOut);
-//         volumeActive.muted = true;
-//       }
-//     }, 50);
-//   }
-// });
+    // Si estaba silenciado → subir volumen con fade-in hasta 0.6
+    if (volumeActive.muted) {
+      volumeActive.muted = false;
+      let volume = 0;
+      volumeActive.volume = volume;
+      const fadeIn = setInterval(() => {
+        if (volume < 0.3) {
+          volume += 0.05;
+          volumeActive.volume = volume;
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 50);
+    } 
+    // Si tiene sonido → aplicar fade-out y luego mutear
+    else {
+      let volume = volumeActive.volume;
+      const fadeOut = setInterval(() => {
+        if (volume > 0) {
+          volume -= 0.05;
+          volumeActive.volume = Math.max(volume, 0);
+        } else {
+          clearInterval(fadeOut);
+          volumeActive.muted = true;
+        }
+      }, 50);
+    }
+  });
+} else {
+  console.debug("muteBtn o video no encontrados (bloque de sonido no inicializado).");
+}
+
   
 
 // Lógica abrir de la ventana modal
