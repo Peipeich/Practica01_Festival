@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>日本音楽FEST</title>
     <!-- Favicon -->
-    <link href="m/images/favicon 01.png" rel="icon" type="images/png">
+    <link href="media/img/VisualFest/Logo-FB.png" rel="icon" type="images/png">
      <!-- Font awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css -->
@@ -114,7 +114,7 @@
             <legend>CONTACT</legend>
             <hr>
             <div class="formulario">
-             <form action="" method="">
+             <form id="contactForm" action="" method="post">
                 <div  class="name">
                     <label for="name">Write your name</label>
                     <input type="text" id="name" placeholder="Tu nombre" maxlength="32" minlength="3">
@@ -125,8 +125,8 @@
                 </div>               
                 <div class="comment">
                     <label for="comment">Write a comment</label>
-                    <textarea id="comment" rows="1" cols="1">Write your message...</textarea>
-                    <input type="submit" value="Enviar">
+                    <textarea id="comment" rows="1" cols="1" placeholder="Write your message..."></textarea>
+                    <input id="submitBtn" type="submit" value="Enviar">
                 </div> 
             </form> 
         </div>

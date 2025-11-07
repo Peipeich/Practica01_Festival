@@ -219,3 +219,82 @@ if (ticketMenuForm) {
   });
 }
 
+// FORMULARIO DE CONTACTO
+
+(function(){
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const submitBtn = document.getElementById('submitBtn');
+
+  function validateEmail(email){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  // 💬 Mostrar mensaje tipo Google toast
+  function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.position = 'fixed';
+    toast.style.left = '50%';
+    toast.style.bottom = '20px';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.padding = '12px 20px';
+    toast.style.borderRadius = '6px';
+    toast.style.color = '#fff';
+    toast.style.fontFamily = 'Roboto, sans-serif';
+    toast.style.fontSize = '0.95rem';
+    toast.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+    toast.style.zIndex = '9999';
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.3s ease, bottom 0.3s ease';
+    toast.style.backgroundColor = type === 'error' ? '#d32f2f' : '#388e3c';
+
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.bottom = '40px';
+    });
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.bottom = '20px';
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  }
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const firstName = form.querySelector('#name').value.trim();
+  const email = form.querySelector('#e-mail').value.trim();
+  const message = form.querySelector('#comment').value.trim();
+
+  // 🚫 validación de campos vacíos
+  if (!firstName || !email || !message) {
+    showToast('⚠️ Please fill in all required fields.', 'error');
+    return;
+  }
+
+  // 📧 validación de email
+  if (!validateEmail(email)) {
+    showToast('Please enter a valid email address.', 'error');
+    form.querySelector('#e-mail').focus();
+    return;
+  }
+
+  // ✉️ simular envío
+  submitBtn.disabled = true;
+  showToast('Sending...', 'success');
+
+  setTimeout(() => {
+    submitBtn.disabled = false;
+    showToast('✅ Message sent — thank you!', 'success');
+    form.reset();
+  }, 1000);
+});
+
+})();
+
+

@@ -585,9 +585,7 @@ main> .parallax-text{
 }
 
 .scroll-down {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    transform: translateX(-50%);
     position: absolute;
     top:80vh;
     right:45%;
@@ -773,6 +771,11 @@ legend{
     border-radius:var(--small) ;
 }
 
+.name input, .e-mail input,.comment input{
+    padding: var(--small);
+
+}
+
 .name label{
     padding-top: var(--small);
     color: var(--orange);
@@ -786,20 +789,34 @@ legend{
     color: var(--blue);
 }
 
+.comment input{
+    font-family: var(--maintypo);
+}
+
+
 textarea{
     font-family: var(--maintypo);
     text-align: center;
+    padding: var(--small);
 }
 
-.name, .e-mail,.comment,.comment, #comment{
+.name, .e-mail,.comment,.comment{
     display: flex;
     flex-direction: column;
     align-items:center;
-    padding-bottom: var(--mid)
+    padding-bottom: var(--small)
 }
 
 .notformulario{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: var(--small);
+}
+
+.notformulario .contact-info2{
+    display: flex;
+    gap: var(--small);
 }
 
 
@@ -1375,15 +1392,10 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 /* SECIONES DE LA HOME INFO*/ 
 
 .info >ul{
-    padding-bottom: var(--mid);
-    
+    padding-bottom: var(--mid);   
 }
 
 /* ARTIST LINE-UP */
-
-.scroll-down {
-    right:40%;
-}
 
 .artist-section .artist-bot{
     grid-template-columns: auto auto;
@@ -1398,7 +1410,11 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
     width: 100%;
 }
 
-   /* INFO  */
+/* INFO */
+    .info {
+        padding: 20vh var(--mid) var(--mid) var(--mid); 
+    }
+
     .info >ul{
     grid-template-columns: auto ;
 
@@ -1492,6 +1508,7 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
     .artist-section .artist-bot{
      grid-template-columns: auto;
     }
+
 
 
     /* FOOTER */
