@@ -431,6 +431,10 @@ main> .parallax-text{
     color: var(--blue);
 }
 
+.fest-intro .festIntro-right .festIntro-text h2 > span,.fest-page .festIntro-right .festIntro-text h2 > span{
+    font-family: var(--kanjitypo);
+}
+
 .fest-intro .festIntro-right .festIntro-text p,.fest-page .festIntro-right .festIntro-text p{
     padding-top: var(--mid);
     text-align: justify; 
@@ -586,7 +590,7 @@ main> .parallax-text{
     align-items: center;
     position: absolute;
     top:80vh;
-    left:46vw;
+    right:45%;
     color: var(--white);
 }
 
@@ -1335,6 +1339,11 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
   display: flex;
 }
 
+ #demo{
+    padding-top: var(--mid);
+    font-size: 3.5rem;
+}
+
 /* SECIONES DE LA HOME FEST INTRO*/
 .fest-intro, .fest-page{
     flex-direction: column;
@@ -1371,6 +1380,11 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 }
 
 /* ARTIST LINE-UP */
+
+.scroll-down {
+    right:40%;
+}
+
 .artist-section .artist-bot{
     grid-template-columns: auto auto;
 }
@@ -1382,6 +1396,12 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 
 .news .noticias-fila .tarjeta-noticias,.news-page .noticias-fila .tarjeta-noticias {
     width: 100%;
+}
+
+   /* INFO  */
+    .info >ul{
+    grid-template-columns: auto ;
+
 }
 
 /* FOOTER */
@@ -1448,7 +1468,6 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
 
 @media (max-width: 600px) {
     #demo{
-        padding-top: var(--mid);
         font-size: var(--mid);
     }
 
@@ -1473,6 +1492,7 @@ nav> .nav-bot900> ul .desple-top  .desple-bot .desp-exp>a {
     .artist-section .artist-bot{
      grid-template-columns: auto;
     }
+
 
     /* FOOTER */
     footer .footer-top .newsletter button{
